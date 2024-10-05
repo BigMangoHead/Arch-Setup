@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ls -lAh --color=always $@ | grep -v ^l | grep -v ~$

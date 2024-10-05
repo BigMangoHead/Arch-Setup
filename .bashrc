@@ -8,7 +8,7 @@
 export PATH=$PATH:~/bin
 
 alias ls='ls --color=auto'
-alias la='ls -la --color=auto'
+alias laa='ls -lah --color=auto'
 alias sls='screen -ls'
 alias grep='grep --color=auto'
 
