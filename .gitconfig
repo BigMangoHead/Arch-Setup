@@ -1,0 +1,7 @@
+[user]
+	name = Isaac Mango
+	email = bigmangohead@gmail.com
+[init]
+	defaultBranch = main
+[core]
+	excludesfile = /home/bigma/.gitconfig

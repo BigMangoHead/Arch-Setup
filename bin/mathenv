@@ -1,0 +1,3 @@
+#!/bin/bash
+screen -Sdm emac bash -c "emacs $1"
+screen -Sdm latex bash -c 'latexmk -pvc -xelatex -interaction=nonstopmode $1'
