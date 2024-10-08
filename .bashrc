@@ -22,7 +22,7 @@ alias cctemplate='bash /home/bigma/builds/python/CPIT-ADDON/add.sh'
 alias ccheck='cpit checker build/Debug/outDebug'
 
 # For working with dotfiles
-alias dotgit='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias homegit='/usr/bin/git --git-dir=$HOME/arch-setup/homegit/ --work-tree=$HOME'
 
 PS1='[\u@\h \W]\$ '
 
