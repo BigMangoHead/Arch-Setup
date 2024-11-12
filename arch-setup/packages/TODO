@@ -1,0 +1,15 @@
+thorium-browser-bin # This one is AUR
+
+
+# Need to figure out steam and steamcmd
+# Note that this command was used last time for some reason or another:
+# /usr/bin/pacman -S --asdeps lib32-sdl2 lib32-dbus
+
+lunar-client
+
+# Figure out what these packages were for:
+# pacman -Syu autoconf texinfo libgnutls28-dev libxml2-dev libncurses5-dev libjansson-dev
+# pacman -Syu gnutls xml2 ncurses jansson
+# pacman -S bear
+
+ttf-ms-win11 # Microsoft fonts, like times new roman
