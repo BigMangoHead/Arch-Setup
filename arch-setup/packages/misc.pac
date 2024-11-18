@@ -16,7 +16,6 @@ mc # A file explorer, though I don't use it much
 vifm # File explorer, used in aur-utils mainly
 
 base-devel # Used in making packages from AUR
-aur-utils # Helps with AUR package mangement
 
 os-prober # Allows for detecting other systems for dual-booting purposes with grub
 ntfs-3g # Allows mounting windows file systems
