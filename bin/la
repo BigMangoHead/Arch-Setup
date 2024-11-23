@@ -1,3 +1,4 @@
 #!/bin/bash
 
+# Hide syslinks and emacs backups
 ls -lAh --color=always $@ | grep -v ^l | grep -v ~$
