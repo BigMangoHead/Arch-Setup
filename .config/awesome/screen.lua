@@ -3,6 +3,8 @@ local awful = require("awful")
 local wibox = require("wibox")
 local gears = require("gears")
 
+local battery_widget = require("libs/battery-widget")
+
 local screen_handler = {}
 
 function screen_handler.init(window_manager, mymenu, wallpaper_handler, wibar_handler)
@@ -69,7 +71,7 @@ function screen_handler.init(window_manager, mymenu, wallpaper_handler, wibar_ha
 	    s.mytasklist, -- Middle widget
 	    { -- Right widgets
 	       layout = wibox.layout.fixed.horizontal,
-	       vars.mykeyboardlayout,
+	       battery_widget {},
 	       wibox.widget.systray(),
 	       mywibar.mytextclock,
 	       s.mylayoutbox,
