@@ -1,0 +1,17 @@
+#!/bin/bash
+
+homegit () {
+    git --git-dir=$HOME/arch-setup/homegit/ --work-tree=$HOME $@
+}
+
+homegit checkout main
+homegit cherry-pick pc-alien
+homegit push
+
+homegit checkout laptop-yoga
+homegit cherry-pick pc-alien
+homegit push
+
+homegit checkout pc-alien
+homegit push
+
