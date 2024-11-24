@@ -5,13 +5,13 @@ homegit () {
 }
 
 homegit checkout main
-homegit cherry-pick pc-alien
-homegit push
-
-homegit checkout laptop-yoga
-homegit cherry-pick pc-alien
+homegit cherry-pick laptop-yoga
 homegit push
 
 homegit checkout pc-alien
+homegit cherry-pick laptop-yoga
+homegit push
+
+homegit checkout laptop-yoga
 homegit push
 
