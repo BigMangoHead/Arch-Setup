@@ -23,3 +23,5 @@ ntfs-3g # Allows mounting windows file systems
 ttf-font # Some fonts
 noto-fonts-emoji # Emojis
 xorg-fonts # More fonts
+
+ntp # ntpd command syncs computer with UTC time
