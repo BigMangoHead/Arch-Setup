@@ -11,7 +11,10 @@ aws-cli # For accessing cloud storage
 wget # For download from links
 zip # File compression
 unzip
+
 xclip # CLI for clipboard
+interception-caps2esc # For rebinding caps-lock
+interception-dual-function-keys # Also for rebinding caps-lock
 
 mc # A file explorer, though I don't use it much
 vifm # File explorer, used in aur-utils mainly
