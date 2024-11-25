@@ -1,0 +1,13 @@
+#!/bin/bash
+
+homegit () {
+    git --git-dir=$HOME/arch-setup/homegit/ --work-tree=$HOME $@
+}
+
+homegit checkout pc-alien
+homegit pull
+homegit checkout main
+homegit pull
+homegit checkout laptop-yoga
+homegit pull
+homegit checkout pc-alien
