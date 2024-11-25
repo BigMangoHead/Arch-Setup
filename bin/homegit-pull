@@ -10,4 +10,4 @@ homegit checkout main
 homegit pull
 homegit checkout laptop-yoga
 homegit pull
-homegit checkout pc-alien
+homegit checkout laptop-yoga
