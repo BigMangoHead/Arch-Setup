@@ -2,4 +2,4 @@
 emacs
 vi
 vim
-
+neovim
