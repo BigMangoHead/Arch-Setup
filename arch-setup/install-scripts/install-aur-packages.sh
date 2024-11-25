@@ -25,4 +25,4 @@ done < $1
 aur sync $packages
 
 # Install from local repo
-pacman -S --noconfirm --needed `pacman -Slq aur`
+sudo pacman -S --noconfirm --needed `pacman -Slq aur`
