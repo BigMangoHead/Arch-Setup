@@ -36,3 +36,12 @@ require("luasnip").config.set_config({
   -- Update multi-insertions as they are typed
   update_events = 'TextChanged,TextChangedI',
 })
+
+
+-- Fix filetype issue
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.tex",
+  callback = function()
+    vim.bo.filetype = "tex"
+  end,
+})
