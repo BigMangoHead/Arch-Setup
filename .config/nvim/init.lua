@@ -45,3 +45,9 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     vim.bo.filetype = "tex"
   end,
 })
+
+-- Set <leader> to Space
+vim.g.mapleader = " "
+
+-- Set <localleader> to Space
+vim.g.maplocalleader = " "
