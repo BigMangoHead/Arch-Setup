@@ -51,3 +51,7 @@ vim.g.mapleader = " "
 
 -- Set <localleader> to Space
 vim.g.maplocalleader = " "
+
+
+-- Set pdf viewer
+vim.g.vimtex_view_method = "zathura"
