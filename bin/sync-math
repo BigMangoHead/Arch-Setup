@@ -1,0 +1,3 @@
+#!/bin/bash
+
+rclone bisync /home/bigma/math idrive:math --backup-dir1 /home/bigma/math-backups --backup-dir2 idrive:math-backups --conflict-loser delete --conflict-resolve newer --create-empty-src-dirs --max-lock 5m --recover --resilient --verbose
