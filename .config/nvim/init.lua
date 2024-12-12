@@ -55,3 +55,9 @@ vim.g.maplocalleader = " "
 
 -- Set pdf viewer
 vim.g.vimtex_view_method = "zathura"
+
+-- Configure text wrapping
+vim.opt.textwidth = 0
+vim.opt.wrapmargin = 1
+vim.opt.formatoptions:append("t")
+vim.opt.formatoptions:remove("l")
