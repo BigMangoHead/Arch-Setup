@@ -1,16 +1,16 @@
 return {
     -- Greek letters
-    s({ trig = ";a", wordTrig = false, snippetType = "autosnippet" },
+    s({ trig = ";a", wordTrig = false, snippetType = "autosnippet", dscr = "Greek letter alpha" },
         {
             t("\\alpha"),
         }
     ),
-    s({ trig = ";b", wordTrig=false, snippetType = "autosnippet" },
+    s({ trig = ";b", wordTrig=false, snippetType = "autosnippet", dscr = "Greek letter beta" },
         {
             t("\\beta"),
         }
     ),
-    s({ trig = ";g", wordTrig = false, snippetType = "autosnippet" },
+    s({ trig = ";g", wordTrig = false, snippetType = "autosnippet", dscr = "Greek letter gamma" },
         {
             t("\\gamma"),
         }
@@ -39,5 +39,15 @@ return {
             ]],
             { i(1), i(2), rep(1) }
         )
-    )
+    ),
+
+    -- Inline math environment
+    s({ trig = "mm", snippetType = "autosnippet" , dscr = "Expands into inline math mode"},
+        fmta(
+            [[
+                $<>$<>
+            ]],
+            { i(1), i(0)}
+        )
+    ),
 }
