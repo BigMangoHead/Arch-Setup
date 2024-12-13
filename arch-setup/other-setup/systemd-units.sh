@@ -2,6 +2,7 @@
 
 systemctl --user enable --now ssh-agent # Authentification for github
 sudo systemctl enable --now udevmon # Remaps caps lock
+systemctl enable --now --user sync-math.timer # Enable math file syncing
 
 # Enable audio
 systemctl --user enable pipewire 

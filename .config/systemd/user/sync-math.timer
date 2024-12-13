@@ -1,0 +1,9 @@
+[Unit]
+Description="Syncs math files with cloud storage every 30 minutes"
+
+[Timer]
+OnUnitActiveSec=30minutes
+Unit=sync-math.service
+
+[Install]
+WantedBy=timers.target
