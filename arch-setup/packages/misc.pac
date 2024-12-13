@@ -32,3 +32,5 @@ xorg-fonts # More fonts
 ntp # ntpd command syncs computer with UTC time
 
 acpilight # Brightness adjustment
+
+rclone # File syncing
