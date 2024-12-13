@@ -1,0 +1,18 @@
+## Filter file for math directory
+
+# Special .sync directory if it's ever needed
++ **/.sync/**
+
+# Ignore backup files
+- **backup**
+
+# Add proper file types
++ *.tex
++ *.txt
++ *.rnote
++ *.pdf
++ *.png
++ *.jpg
+
+# Ignore everything else
+- **
