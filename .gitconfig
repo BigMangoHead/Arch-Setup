@@ -4,4 +4,4 @@
 [init]
 	defaultBranch = main
 [core]
-	excludesfile = /home/bigma/.gitconfig
+	excludesfile = /home/bigma/.gitignore
