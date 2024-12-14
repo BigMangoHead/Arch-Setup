@@ -1,0 +1,5 @@
+[Unit]
+Description="Timer job for syncing phone files"
+
+[Service]
+ExecStart=/usr/local/bin/sync-phone
