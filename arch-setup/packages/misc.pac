@@ -33,4 +33,5 @@ ntp # ntpd command syncs computer with UTC time
 
 acpilight # Brightness adjustment
 
-rclone # File syncing
+rclone # File syncing w/ cloud storages and devices
+syncthing # File syncing designed for computer to computer 
