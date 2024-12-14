@@ -1,0 +1,9 @@
+[Unit]
+Description="Copies phone files from cloud storage 5 minutes after every hour"
+
+[Timer]
+OnCalendar=Mon..Sun *-*-* *:05:00
+Unit=sync-phone.service
+
+[Install]
+WantedBy=timers.target
