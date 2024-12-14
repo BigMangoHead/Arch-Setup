@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo rclone sync idrive:pixel-8a-files /media/phone
