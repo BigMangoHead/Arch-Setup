@@ -188,20 +188,57 @@ function binding_handler.bind_keys(window_manager, main_menu)
    -- Bind all key numbers to tags.
    -- Be careful: we use keycodes to make it work on any keyboard layout.
    -- This should map on the top row of your keyboard, usually 1 to 9.
-   for i = 1, 9 do
+
+   globalkeys = gears.table.join(globalkeys,
+				    -- View tag only.
+				    awful.key({ vars.modkey }, "#" .. 10,
+				       function ()
+					  window_manager.selected_window:switch_tag_by_index(1)
+				       end,
+				       {description = "view tag #"..1, group = "tag"}),
+				    -- Toggle tag display.
+				    awful.key({ vars.modkey, "Control" }, "#" .. 10,
+				       function ()
+					  window_manager.selected_window:toggle_tag_by_index(1)
+				       end,
+				       {description = "toggle tag #" .. 1, group = "tag"}
+				       ),
+				    -- Move client to tag.
+				    awful.key({ vars.modkey, "Shift" }, "#" .. 10,
+				       function ()
+					  if client.focus then
+					     local tag = window_manager.selected_window.taglist[1]
+					     if tag then
+						client.focus:move_to_tag(tag)
+					     end
+					  end
+				       end,
+				       {description = "move focused client to tag #"..1, group = "tag"}),
+				    -- Toggle tag on focused client.
+				    awful.key({ vars.modkey, "Control", "Shift" }, "#" .. 10,
+				       function ()
+					  if client.focus then
+					     local tag = window_manager.selected_window.taglist[1]
+					     if tag then
+						client.focus:toggle_tag(tag)
+					     end
+					  end
+				       end,
+				       {description = "toggle focused client on tag #" .. 1, group = "tag"})
+				       )
+
+   for i = 2, 9 do
       globalkeys = gears.table.join(globalkeys,
 				    -- View tag only.
 				    awful.key({ vars.modkey }, "#" .. i + 9,
 				       function ()
 					  window_manager.selected_window:switch_tag_by_index(i)
-				       end,
-				       {description = "view tag #"..i, group = "tag"}),
+				       end),
 				    -- Toggle tag display.
 				    awful.key({ vars.modkey, "Control" }, "#" .. i + 9,
 				       function ()
 					  window_manager.selected_window:toggle_tag_by_index(i)
-				       end,
-				       {description = "toggle tag #" .. i, group = "tag"}),
+				       end),
 				    -- Move client to tag.
 				    awful.key({ vars.modkey, "Shift" }, "#" .. i + 9,
 				       function ()
@@ -211,8 +248,7 @@ function binding_handler.bind_keys(window_manager, main_menu)
 						client.focus:move_to_tag(tag)
 					     end
 					  end
-				       end,
-				       {description = "move focused client to tag #"..i, group = "tag"}),
+				       end),
 				    -- Toggle tag on focused client.
 				    awful.key({ vars.modkey, "Control", "Shift" }, "#" .. i + 9,
 				       function ()
@@ -222,8 +258,7 @@ function binding_handler.bind_keys(window_manager, main_menu)
 						client.focus:toggle_tag(tag)
 					     end
 					  end
-				       end,
-				       {description = "toggle focused client on tag #" .. i, group = "tag"})
+				       end)
       )
    end
 
