@@ -224,8 +224,19 @@ function binding_handler.bind_keys(window_manager, main_menu)
 					     end
 					  end
 				       end,
-				       {description = "toggle focused client on tag #" .. 1, group = "tag"})
-				       )
+				       {description = "toggle focused client on tag #" .. 1, group = "tag"}),
+                                    -- Move client to window.
+				    awful.key({vars.modkey, "Alt"}, "#" .. 10, 
+				       function ()
+					  if client.focus then
+				             local tag = window_manager.get_windows[10].taglist[1]
+					     if tag then
+						client.focus:move_to_tag(tag)
+					     end
+					  end
+				       end,
+				       {description = "move focused client to window #"..1, group = "tag"})
+				    )
 
    for i = 2, 9 do
       globalkeys = gears.table.join(globalkeys,
@@ -258,8 +269,18 @@ function binding_handler.bind_keys(window_manager, main_menu)
 						client.focus:toggle_tag(tag)
 					     end
 					  end
+				       end),
+				    -- Move client to window.
+				    awful.key({vars.modkey, "Alt"}, "#" .. i + 9, 
+				       function ()
+					  if client.focus then
+				             local tag = window_manager.get_windows[i].taglist[1]
+					     if tag then
+						client.focus:move_to_tag(tag)
+					     end
+					  end
 				       end)
-      )
+				    )
    end
 
    -- Bind window keys
