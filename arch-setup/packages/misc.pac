@@ -17,9 +17,6 @@ interception-caps2esc # For rebinding caps-lock
 interception-dual-function-keys # Also for rebinding caps-lock
 xbindkeys # For a few misc keybinds with FN keys
 
-mc # A file explorer, though I don't use it much
-vifm # File explorer, used in aur-utils mainly
-
 base-devel # Used in making packages from AUR
 
 os-prober # Allows for detecting other systems for dual-booting purposes with grub
@@ -35,6 +32,3 @@ acpilight # Brightness adjustment
 
 rclone # File syncing w/ cloud storages and devices
 syncthing # File syncing designed for computer to computer 
-
-zathura # PDF viewer
-mupdf # Another file viewer
