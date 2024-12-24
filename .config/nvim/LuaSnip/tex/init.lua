@@ -1,32 +1,37 @@
-return {
-    -- Greek letters
-    s({ trig = ";a", wordTrig = false, snippetType = "autosnippet", dscr = "Greek letter alpha" },
-        {
-            t("\\alpha"),
-        }
-    ),
-    s({ trig = ";b", wordTrig=false, snippetType = "autosnippet", dscr = "Greek letter beta" },
-        {
-            t("\\beta"),
-        }
-    ),
-    s({ trig = ";g", wordTrig = false, snippetType = "autosnippet", dscr = "Greek letter gamma" },
-        {
-            t("\\gamma"),
-        }
-    ),
+-- Conditions
+local helper = require('luasnip-helper')
+local line_begin = helper.line_begin
+local in_math = helper.in_math
+local in_text = helper.in_text
 
+-- Snippets
+return {
     -- Equation
-    s({ trig = "eq", dscr = "Expands into equation environment" },
+    s({ trig = "eq", snippetType = "autosnippet", dscr = "Expands into equation environment" },
         fmta(
             [[
-                \begin{equation}
+                \begin{equation*}
                     <>
-                \end{equation}
+                \end{equation*}
                 <>
             ]],
             { i(1), i(0) }
-        )
+        ),
+        {condition = line_begin}
+    ),
+
+    -- Align
+    s({ trig = "al", snippetType = "autosnippet", dscr = "Expands into align environment" },
+        fmta(
+            [[
+                \begin{align*}
+                    <>
+                \end{align*}
+                <>
+            ]],
+            { i(1), i(0) }
+        ),
+        {condition = line_begin}
     ),
 
     -- Begin environment
@@ -36,18 +41,30 @@ return {
                 \begin{<>}
                     <>
                 \end{<>}
+                <>
             ]],
-            { i(1), i(2), rep(1) }
+            { i(1), i(2), rep(1), i(0) }
         )
     ),
 
     -- Inline math environment
-    s({ trig = "mm", snippetType = "autosnippet" , dscr = "Expands into inline math mode"},
+    s({ trig = "dj", snippetType = "autosnippet" , dscr = "Expands into inline math mode"},
+        fmta(
+            [[$<>$]],
+            { i(1)}
+        ),
+        {condition = in_text}
+    ),
+
+    -- New section
+    s({ trig = "se", snippetType = "autosnippet" , dscr = "Expands into inline math mode"},
         fmta(
             [[
-                $<>$<>
+                \section*{<>}
+                <>
             ]],
-            { i(1), i(0)}
-        )
+            { i(1), i(0) }
+        ),
+        {condition = line_begin}
     ),
 }
