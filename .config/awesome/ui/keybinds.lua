@@ -197,7 +197,7 @@ function binding_handler.bind_keys(window_manager, main_menu)
 				       end,
 				       {description = "view tag #"..1, group = "tag"}),
 				    -- Toggle tag display.
-				    awful.key({ vars.modkey, "Control" }, "#" .. 10,
+				     awful.key({ vars.modkey, "Control" }, "#" .. 10,
 				       function ()
 					  window_manager.selected_window:toggle_tag_by_index(1)
 				       end,
@@ -226,16 +226,17 @@ function binding_handler.bind_keys(window_manager, main_menu)
 				       end,
 				       {description = "toggle focused client on tag #" .. 1, group = "tag"}),
                                     -- Move client to window.
-				    awful.key({vars.modkey, "Alt"}, "#" .. 10, 
+				    awful.key({vars.modkey, "Shift"}, "#" .. 67, 
 				       function ()
 					  if client.focus then
-				             local tag = window_manager.get_windows[10].taglist[1]
+				             local tag = window_manager.get_windows()[1].taglist[1]
 					     if tag then
 						client.focus:move_to_tag(tag)
 					     end
 					  end
 				       end,
 				       {description = "move focused client to window #"..1, group = "tag"})
+				    
 				    )
 
    for i = 2, 9 do
@@ -246,6 +247,7 @@ function binding_handler.bind_keys(window_manager, main_menu)
 					  window_manager.selected_window:switch_tag_by_index(i)
 				       end),
 				    -- Toggle tag display.
+				   
 				    awful.key({ vars.modkey, "Control" }, "#" .. i + 9,
 				       function ()
 					  window_manager.selected_window:toggle_tag_by_index(i)
@@ -271,15 +273,16 @@ function binding_handler.bind_keys(window_manager, main_menu)
 					  end
 				       end),
 				    -- Move client to window.
-				    awful.key({vars.modkey, "Alt"}, "#" .. i + 9, 
+				    awful.key({vars.modkey, "Shift"}, "#" .. i + 66, 
 				       function ()
 					  if client.focus then
-				             local tag = window_manager.get_windows[i].taglist[1]
+				             local tag = window_manager.get_windows()[i].taglist[1]
 					     if tag then
 						client.focus:move_to_tag(tag)
 					     end
 					  end
 				       end)
+				    
 				    )
    end
 
@@ -314,6 +317,7 @@ function binding_handler.bind_keys(window_manager, main_menu)
    -- Set keys
    root.keys(globalkeys)
    -- }}}
+   
 
 end
 
