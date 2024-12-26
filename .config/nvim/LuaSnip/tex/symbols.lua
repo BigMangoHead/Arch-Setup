@@ -3,18 +3,18 @@ local helper = require('luasnip-helper')
 local in_math = helper.in_math
 
 -- Snippet Helpers
-local function greekdif(a, b, c)
+local function symbol(a, b, c)
     return s({trig = a, wordTrig = false, snippetType = "autosnippet", dscr = c},
                 {t("\\" .. b)},
             {condition = in_math})
 end
 
 local function greek(a, b)
-    return greekdif(a, b, "Greek letter " .. b)
+    return symbol(a, b, "Greek letter " .. b)
 end
 
 local function greekcap(a, b)
-    return greekdif(a, b, "Capital greek letter " .. b)
+    return symbol(a, b, "Capital greek letter " .. b)
 end
 
 -- Snippets
@@ -39,7 +39,7 @@ return {
     greek(";s", "sigma"),
     greek(";t", "tau"),
     greek(";h", "phi"),
-    greekdif(":h", "varphi", "Other form of greek letter phi"),
+    symbol(":h", "varphi", "Other form of greek letter phi"),
     greek(";c", "chi"),
     greek(";i", "psi"),
     greek(";o", "omega"),
@@ -52,4 +52,7 @@ return {
     greekcap(";H", "Phi"),
     greekcap(";I", "Psi"),
     greekcap(";O", "Omega"),
+    
+    -- Dots
+    symbol("ld", "ldots", "Three dots")
 }
