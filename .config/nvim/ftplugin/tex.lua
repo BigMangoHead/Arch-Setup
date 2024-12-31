@@ -1,0 +1,1 @@
+vim.g.custom_autosave_default = true;
