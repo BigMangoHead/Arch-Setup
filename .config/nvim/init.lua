@@ -54,10 +54,25 @@ vim.g.maplocalleader = " "
 
 
 -- Set pdf viewer
-vim.g.vimtex_view_method = "zathura"
+vim.g.vimtex_view_method = "mupdf"
 
 -- Configure text wrapping
 vim.opt.textwidth = 0
 vim.opt.wrapmargin = 1
 vim.opt.formatoptions:append("t")
 vim.opt.formatoptions:remove("l")
+
+
+-- Keybinds
+-- Compile command
+vim.keymap.set({'n', 's', 'v', 'o'}, "<Leader>c", "<Cmd>write<CR><Cmd>VimtexCompile<CR>")
+
+-- Autocompile command
+vim.keymap.set({'n', 's', 'v', 'o'}, "<Leader>C", "<Cmd>ToggleAutosave<CR><Cmd>VimtexCompile<CR>")
+
+-- Change environment keybind (default)
+vim.keymap.set({'n'}, "cs$", "<Plug>(vimtex-env-change-math)")
+
+-- Change to align* environment
+vim.keymap.set({'n'}, "csa", "<Plug>(vimtex-env-change-math)align*<CR>")
+
