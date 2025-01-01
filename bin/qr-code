@@ -1,0 +1,2 @@
+#!/bin/bash
+maim -qs | zbarimg -q --raw - | xclip -selection clipboard -f

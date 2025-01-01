@@ -1,0 +1,2 @@
+#!/bin/bash
+xclip -selection clipboard -t image/png /home/bigma/misc-files/screenshots/latest-screenshot.png 
