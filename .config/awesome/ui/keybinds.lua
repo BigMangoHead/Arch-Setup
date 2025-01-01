@@ -75,8 +75,12 @@ function binding_handler.bind_keys(window_manager, main_menu)
       awful.key({ vars.modkey, "Shift"   }, "q", awesome.quit,
 	 {description = "quit awesome", group = "awesome"}),
       awful.key({ vars.modkey,           }, "/", function () awful.spawn(vars.browser) end,
-	 {description = "open a browser", group = "launcher"}),
-      
+	 {description = "open a browser", group = "launcher"}), 
+      awful.key({ vars.modkey,           }, "Print", function () awful.spawn("screenshot-full") end,
+	 {description = "take a full screenshot", group = "screen"}), 
+      awful.key({ vars.modkey, "Shift"   }, "Print", function () awful.spawn("screenshot-partial") end,
+	 {description = "take a cropped screenshot", group = "screen"}), 
+
       -- Layout manipulation
       awful.key({ vars.modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
 	 {description = "increase master width factor", group = "layout"}),

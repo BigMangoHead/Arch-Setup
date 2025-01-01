@@ -14,6 +14,8 @@ zip # File compression
 unzip
 
 maim # Screenshots
+zbar # QR code reader
+
 xclip # CLI for clipboard
 interception-caps2esc # For rebinding caps-lock
 interception-dual-function-keys # Also for rebinding caps-lock

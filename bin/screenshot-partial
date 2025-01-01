@@ -1,0 +1,4 @@
+#!/bin/bash
+maim -s > /home/bigma/misc-files/screenshots/latest-screenshot.png
+cp /home/bigma/misc-files/screenshots/latest-screenshot.png /home/bigma/misc-files/screenshots/$(date +%F--%H-%M-%S).png
+screenshot-copy
