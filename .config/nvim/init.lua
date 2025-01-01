@@ -10,33 +10,28 @@ vim.call('plug#begin')
 Plug('L3MON4D3/LuaSnip')
 
 -- LaTeX helper package
-Plug('lervag/vimtex')
+Plug('lervag/vimtex', { ['for'] = 'tex' })
+
+-- Fuzzy finder
+Plug('nvim-lua/plenary.nvim')
+Plug('nvim-telescope/telescope.nvim', { ['branch'] = '0.1.x' })
+
+-- Theme
+Plug('rebelot/kanagawa.nvim')
+
+-- Highlighting with treesitter
+Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})
+
+-- Git integration
+Plug('tpope/vim-fugitive')
+
+-- File tree
+Plug('nvim-lua/plenary.nvim')
+Plug('nvim-tree/nvim-web-devicons')
+Plug('MunifTanjim/nui.nvim')
+Plug('nvim-neo-tree/neo-tree.nvim', { ['branch'] = 'v3.x'})
 
 vim.call('plug#end')
-
-
--- Configure snippet keybinds
-local ls = require("luasnip")
-
-vim.keymap.set({"i"}, "<Tab>", function() ls.expand_or_jump() end, {silent = true})
-vim.keymap.set({"i", "s"}, "<S-Tab>", function() ls.jump(-1) end, {silent = true})
-
--- Load snippets from ~/.config/nvim/LuaSnip/
-require("luasnip.loaders.from_lua").lazy_load({paths = "~/.config/nvim/LuaSnip/"})
-
--- LuaSnip config
-require("luasnip").config.set_config({
-
-  -- Enable autotriggered snippets
-  enable_autosnippets = true,
-
-  -- Use Tab to trigger visual selection
-  store_selection_keys = "<Tab>",
-
-  -- Update multi-insertions as they are typed
-  update_events = 'TextChanged,TextChangedI',
-})
-
 
 -- Fix filetype issue
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
@@ -65,10 +60,10 @@ vim.opt.formatoptions:remove("l")
 
 -- Keybinds
 -- Compile command
-vim.keymap.set({'n', 's', 'v', 'o'}, "<Leader>c", "<Cmd>write<CR><Cmd>VimtexCompile<CR>")
+vim.keymap.set({'n', 's', 'v', 'o'}, "<localleader>c", "<Cmd>write<CR><Cmd>VimtexCompile<CR>")
 
 -- Autocompile command
-vim.keymap.set({'n', 's', 'v', 'o'}, "<Leader>C", "<Cmd>ToggleAutosave<CR><Cmd>VimtexCompile<CR>")
+vim.keymap.set({'n', 's', 'v', 'o'}, "<localleader>C", "<Cmd>ToggleAutosave<CR><Cmd>VimtexCompile<CR>")
 
 -- Change environment keybind (default)
 vim.keymap.set({'n'}, "cs$", "<Plug>(vimtex-env-change-math)")
@@ -76,3 +71,5 @@ vim.keymap.set({'n'}, "cs$", "<Plug>(vimtex-env-change-math)")
 -- Change to align* environment
 vim.keymap.set({'n'}, "csa", "<Plug>(vimtex-env-change-math)align*<CR>")
 
+-- Call other configs
+require("remap")
