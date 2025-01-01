@@ -5,6 +5,7 @@ alacritty # My terminal application
 
 neofetch # Looks cool, displays system information
 htop # Also displays system information
+cmatrix # Looks cool
 
 git
 aws-cli # For accessing cloud storage
@@ -12,6 +13,7 @@ wget # For download from links
 zip # File compression
 unzip
 
+maim # Screenshots
 xclip # CLI for clipboard
 interception-caps2esc # For rebinding caps-lock
 interception-dual-function-keys # Also for rebinding caps-lock
@@ -25,6 +27,7 @@ ntfs-3g # Allows mounting windows file systems
 ttf-font # Some fonts
 noto-fonts-emoji # Emojis
 xorg-fonts # More fonts
+nerd-fonts # Lots and lots of fonts
 
 ntp # ntpd command syncs computer with UTC time
 
