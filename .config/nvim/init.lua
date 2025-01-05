@@ -41,9 +41,6 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   end,
 })
 
--- Set <leader> to Space
-vim.g.mapleader = " "
-
 -- Set <localleader> to Space
 vim.g.maplocalleader = " "
 
@@ -72,4 +69,6 @@ vim.keymap.set({'n'}, "cs$", "<Plug>(vimtex-env-change-math)")
 vim.keymap.set({'n'}, "csa", "<Plug>(vimtex-env-change-math)align*<CR>")
 
 -- Call other configs
+require("settings")
 require("remap")
+
