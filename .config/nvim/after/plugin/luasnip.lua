@@ -7,7 +7,7 @@ vim.keymap.set({"i", "s"}, "<S-Tab>", function() ls.jump(-1) end, {silent = true
 require("luasnip.loaders.from_lua").lazy_load({paths = "~/.config/nvim/LuaSnip/"})
 
 -- LuaSnip config
-require("luasnip").config.set_config({
+ls.config.set_config({
 
   -- Enable autotriggered snippets
   enable_autosnippets = true,
