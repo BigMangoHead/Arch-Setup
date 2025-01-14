@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 export PATH=$PATH:~/bin
-export MANPATH=$(manpath):~/.man
+export MANPATH=:~/.man
 
 alias ls='ls --color=auto'
 alias laa='ls -lah --color=auto'
