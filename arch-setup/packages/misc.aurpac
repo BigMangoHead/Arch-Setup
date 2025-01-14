@@ -1,1 +1,3 @@
 thorium-browser-bin # Chromium-based browser, claims to be a faster version of chromium
+
+snapd # For loading some specific applications. As of writing, used for todoist
