@@ -34,6 +34,47 @@ return {
         {condition = line_begin}
     ),
 
+    -- Proof environment
+    s({ trig = "pf", snippetType = "autosnippet", dscr = "Expands into proof environment" },
+        fmta(
+            [[
+                \begin{proof}
+                    <>
+                \end{proof}
+                <>
+            ]],
+            { i(1), i(0) }
+        ),
+        {condition = line_begin}
+    ),
+
+    -- Theorem environment
+    s({ trig = "th", snippetType = "autosnippet", dscr = "Expands into theorem environment" },
+        fmta(
+            [[
+                \begin{theorem}
+                    <>
+                \end{theorem}
+                <>
+            ]],
+            { i(1), i(0) }
+        ),
+        {condition = line_begin}
+    ),
+
+    -- Lemma environment
+    s({ trig = "le", snippetType = "autosnippet", dscr = "Expands into lemma environment" },
+        fmta(
+            [[
+                \begin{lemma}
+                    <>
+                \end{lemma}
+                <>
+            ]],
+            { i(1), i(0) }
+        ),
+        {condition = line_begin}
+    ),
     -- Begin environment
     s({ trig = "be", dscr = "Expands into beginning any environment" },
         fmta(
