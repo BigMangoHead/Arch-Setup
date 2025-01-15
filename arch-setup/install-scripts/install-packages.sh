@@ -20,4 +20,4 @@ while IFS= read -r line; do
 done < $1
 
 # Download 
-pacman -S --noconfirm --needed $packages
+sudo pacman -S --noconfirm --needed $packages
