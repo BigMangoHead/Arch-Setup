@@ -54,5 +54,14 @@ return {
     greekcap(";O", "Omega"),
     
     -- Dots
-    symbol("ld", "ldots", "Three dots")
+    symbol("ld", "ldots", "Three dots"),
+
+    -- Inverse
+    s({trig = a, wordTrig = false, snippetType = "autosnippet", dscr = "Inverse by exponent"},
+                {t("^{-1}")},
+            {condition = in_math})
+    s({trig = a, wordTrig = false, snippetType = "autosnippet", dscr = "Inverse by exponent"},
+                {t("^{-1}")},
+            {condition = in_math})
+
 }
