@@ -7,7 +7,7 @@ local in_text = helper.in_text
 -- Snippets
 return {
     -- Equation
-    s({ trig = "eq", snippetType = "autosnippet", dscr = "Expands into equation environment" },
+    s({ trig = "eq", dscr = "Expands into equation environment" },
         fmta(
             [[
                 \begin{equation*}
@@ -21,7 +21,7 @@ return {
     ),
 
     -- Align
-    s({ trig = "al", snippetType = "autosnippet", dscr = "Expands into align environment" },
+    s({ trig = "al", dscr = "Expands into align environment" },
         fmta(
             [[
                 \begin{align*}
@@ -35,7 +35,7 @@ return {
     ),
 
     -- Proof environment
-    s({ trig = "pf", snippetType = "autosnippet", dscr = "Expands into proof environment" },
+    s({ trig = "pf", dscr = "Expands into proof environment" },
         fmta(
             [[
                 \begin{proof}
@@ -49,7 +49,7 @@ return {
     ),
 
     -- Theorem environment
-    s({ trig = "th", snippetType = "autosnippet", dscr = "Expands into theorem environment" },
+    s({ trig = "th", dscr = "Expands into theorem environment" },
         fmta(
             [[
                 \begin{theorem}
@@ -63,7 +63,7 @@ return {
     ),
 
     -- Lemma environment
-    s({ trig = "le", snippetType = "autosnippet", dscr = "Expands into lemma environment" },
+    s({ trig = "le", dscr = "Expands into lemma environment" },
         fmta(
             [[
                 \begin{lemma}
