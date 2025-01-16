@@ -22,20 +22,16 @@ function mn_open.run(cmd_args, class_dir, config)
     end
 
     local hw_path
-    for d in lfs.dir(class_dir) do
-        if config.file_location then
-            if config.file_location.hw then
-                hw_path = path .. "/" .. config.file_location.hw
-            end
+    if config.file_location then
+        if config.file_location.hw then
+            hw_path = path .. "/" .. config.file_location.hw
         end
     end
 
     local notes_path
-    for d in lfs.dir(class_dir) do
-        if config.file_location then
-            if config.file_location.hw then
-                notes_path = path .. "/" .. config.file_location.hw
-            end
+    if config.file_location then
+        if config.file_location.notes then
+            notes_path = path .. "/" .. config.file_location.notes
         end
     end
     
@@ -58,6 +54,7 @@ function mn_open.run(cmd_args, class_dir, config)
     if not project_dir and hw_path then
         for d in lfs.dir(hw_path) do
             if d == name then
+                print("Part B")
                 local pathToCheck = hw_path .. "/" .. d
                 local file = io.open(pathToCheck .. "/" .. config.latex_file_name)
                 if file then
