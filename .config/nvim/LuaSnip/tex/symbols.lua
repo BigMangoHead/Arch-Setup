@@ -56,12 +56,15 @@ return {
     -- Dots
     symbol("ld", "ldots", "Three dots"),
 
-    -- Inverse
-    s({trig = a, wordTrig = false, snippetType = "autosnippet", dscr = "Inverse by exponent"},
-                {t("^{-1}")},
-            {condition = in_math})
-    s({trig = a, wordTrig = false, snippetType = "autosnippet", dscr = "Inverse by exponent"},
-                {t("^{-1}")},
-            {condition = in_math})
+--    -- Inverse
+--    s({trig = "jn", wordTrig = false, snippetType = "autosnippet", dscr = "Inverse by exponent"},
+--                {t("^{-1}")},
+--            {condition = in_math})
+--    s({trig = "jfn", wordTrig = false, snippetType = "autosnippet", dscr = "Inverse by fraction"},
+--                fmta(
+--            "\\frac{1}{<>}",
+--            { i(1) }
+--            ),
+--            {condition = in_math})
 
 }
