@@ -21,6 +21,7 @@ return {
         ),
         {condition = in_math}
     ),
+
     -- Square root with custom power
     s({ trig = "ssq", snippetType = "autosnippet" , dscr = "Expands into n-th root"},
         fmta(
@@ -29,4 +30,43 @@ return {
         ),
         {condition = in_math}
     ),
+
+    -- Matrix environments
+    s({ trig = "pma", snippetType = "autosnippet" , dscr = "Expands into standard matrix"},
+        fmta(
+            [[
+                \begin{pmatrix}
+                    <>
+                \end{pmatrix}
+            ]],
+            { i(1) }
+        ),
+        {condition = in_math}
+    ),
+
+    s({ trig = "vma", snippetType = "autosnippet" , dscr = "Expands into determinant"},
+        fmta(
+            [[
+                \begin{vmatrix}
+                    <>
+                \end{vmatrix}
+            ]],
+            { i(1) }
+        ),
+        {condition = in_math}
+    ),
+
+    -- Inverse
+    s({trig = "jn", wordTrig = false, snippetType = "autosnippet", dscr = "Inverse by exponent"},
+        {t("^{-1}")},
+        {condition = in_math}
+    ),
+
+    s({trig = "jfn", wordTrig = false, snippetType = "autosnippet", dscr = "Inverse by fraction"},
+        fmta(
+            "\\frac{1}{<>}",
+            { i(1) }
+        ),
+        {condition = in_math}
+    )
 }
