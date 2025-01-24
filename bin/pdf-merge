@@ -1,0 +1,4 @@
+#!/bin/bash
+# Takes two arguments, those being the two files to merge
+
+gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=finished.pdf "$1" "$2"

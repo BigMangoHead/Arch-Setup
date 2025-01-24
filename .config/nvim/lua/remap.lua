@@ -8,3 +8,5 @@ vim.keymap.set({'n', 'v'}, "<C-c>", [["+y]])
 vim.keymap.set({'n', 'v'}, "<C-v>", [["+p]])
 vim.keymap.set({'i'}, "<C-v>", [[<Esc>"+pa]])
   
+-- Reload LuaSnips
+vim.keymap.set('n', '<Leader>rl', '<Cmd>lua require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/LuaSnip/"})<CR>')
