@@ -21,11 +21,37 @@ return {
         ),
         {condition = in_math}
     ),
+
     -- Square root with custom power
     s({ trig = "ssq", snippetType = "autosnippet" , dscr = "Expands into n-th root"},
         fmta(
             [[\sqrt[<>]{<>}]],
             { i(1), i(2) }
+        ),
+        {condition = in_math}
+    ),
+
+    -- Matrix environments
+    s({ trig = "pma", snippetType = "autosnippet" , dscr = "Expands into standard matrix"},
+        fmta(
+            [[
+                \begin{pmatrix}
+                    <>
+                \end{pmatrix}
+            ]],
+            { i(1) }
+        ),
+        {condition = in_math}
+    ),
+
+    s({ trig = "vma", snippetType = "autosnippet" , dscr = "Expands into determinant"},
+        fmta(
+            [[
+                \begin{vmatrix}
+                    <>
+                \end{vmatrix}
+            ]],
+            { i(1) }
         ),
         {condition = in_math}
     ),
