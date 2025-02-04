@@ -56,15 +56,22 @@ return {
     -- Dots
     symbol("ld", "ldots", "Three dots"),
 
---    -- Inverse
---    s({trig = "jn", wordTrig = false, snippetType = "autosnippet", dscr = "Inverse by exponent"},
---                {t("^{-1}")},
---            {condition = in_math})
---    s({trig = "jfn", wordTrig = false, snippetType = "autosnippet", dscr = "Inverse by fraction"},
---                fmta(
---            "\\frac{1}{<>}",
---            { i(1) }
---            ),
---            {condition = in_math})
+    -- Curve in group action
+    symbol("cur", "curvearrowright", "Group action symbol"),
 
+    -- Common set symbols
+    symbol("NN", "mathbb N", "Set of positive integers"),
+    symbol("ZZ", "mathbb Z", "Set of integers"),
+    symbol("QQ", "mathbb Q", "Set of rationals"),
+    symbol("RR", "mathbb R", "Set of real numbers"),
+    symbol("CC", "mathbb C", "Set of complex numbers"),
+    symbol("FF", "mathbb F", "Finite field"),
+
+    -- Set operators
+    symbol("sue", "subseteq", "Subset or equal"),
+    symbol("sus", "subset", "Proper subset"),
+    symbol("sem", "setminus", "Set difference"),
+
+    -- Group operators
+    symbol("ngr", "trianglelefteq", "Normal subgroup"),
 }

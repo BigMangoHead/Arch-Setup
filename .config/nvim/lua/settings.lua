@@ -1,6 +1,15 @@
 -- Set <leader> to Space
 vim.g.mapleader = " "
 
+-- Set <localleader> to Space
+vim.g.maplocalleader = " "
+
+-- Set vimtex pdf viewer
+vim.g.vimtex_view_method = "mupdf"
+
+-- Text wrapping - don't split words across lines
+vim.opt.linebreak = true
+
 -- Line numbers and relative line numbers enabled
 -- This is disabled for some specific buffers, like the one used by VimTex
 vim.opt.nu = true
