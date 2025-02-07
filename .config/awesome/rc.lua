@@ -73,4 +73,4 @@ require("client")
 window_manager:post_init()
 
 -- Automatically start certain programs in the background
-awful.spawn.with_shell(string.format("%s/.config/awesome/bash-scripts/autorun.sh", os.getenv("HOME")))
+awful.spawn.with_shell(string.format("%s/.config/awesome/scripts/autorun.sh", os.getenv("HOME")))
