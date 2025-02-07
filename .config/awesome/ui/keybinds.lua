@@ -4,6 +4,8 @@ local gears = require("gears")
 local hotkeys_popup = require("awful.hotkeys_popup")
 local menubar = require("menubar")
 
+local extra_functions = require("scripts.keybinds")
+
 binding_handler = {}
 
 function binding_handler.bind_keys(window_manager, main_menu)
@@ -79,6 +81,8 @@ function binding_handler.bind_keys(window_manager, main_menu)
       awful.key({ vars.modkey,           }, "Print", function () awful.spawn("screenshot-full") end,
 	 {description = "take a full screenshot", group = "screen"}), 
       awful.key({ vars.modkey, "Shift"   }, "Print", function () awful.spawn("screenshot-partial") end,
+	 {description = "take a cropped screenshot", group = "screen"}), 
+      awful.key({ vars.modkey, "Control"   }, "Print", extra_functions.math_screenshot,
 	 {description = "take a cropped screenshot", group = "screen"}), 
 
       -- Layout manipulation
