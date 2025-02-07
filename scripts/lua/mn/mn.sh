@@ -3,10 +3,13 @@
 DATA_LOC="/home/bigma/scripts/data"
 SCRIPT_LOC="/home/bigma/scripts/lua/mn"
 
+curdir=$PWD
+
 cd "$SCRIPT_LOC"
 lua mn.lua "$@"
 if [[ $? != 0 ]]; then
-  return 1
+    cd "$curdir"
+    return 1
 fi
 
 MN_LOC="$(cat "$DATA_LOC"/mn-dir)"
