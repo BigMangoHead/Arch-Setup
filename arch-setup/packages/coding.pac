@@ -12,3 +12,6 @@ luarocks
 # Treesitter for code highlighting
 tree-sitter
 tree-sitter-cli # Needed for parsing latex
+
+# Needed by VimTex
+biber
