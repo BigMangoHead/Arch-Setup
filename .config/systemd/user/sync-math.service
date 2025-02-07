@@ -1,5 +1,0 @@
-[Unit]
-Description="Timer job for syncing math files"
-
-[Service]
-ExecStart=/home/bigma/bin/sync-math
