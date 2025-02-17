@@ -31,6 +31,10 @@ Plug('nvim-tree/nvim-web-devicons')
 Plug('MunifTanjim/nui.nvim')
 Plug('nvim-neo-tree/neo-tree.nvim', { ['branch'] = 'v3.x'})
 
+-- Maximize a buffer
+Plug('markstory/vim-zoomwin')
+
+
 vim.call('plug#end')
 
 -- Fix filetype issue
@@ -41,6 +45,9 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   end,
 })
 
+
+-- Add filetypes
+vim.filetype.add({extension = {out = 'codeout'}, pattern = { ['*.in'] = 'codein' }})
 
 
 
