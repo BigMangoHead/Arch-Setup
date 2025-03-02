@@ -30,7 +30,7 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 -- Make searching case insensitive
-vim.opt.ic = true
+-- vim.opt.ic = true
 
 -- Terminal colors
 vim.opt.termguicolors = true
