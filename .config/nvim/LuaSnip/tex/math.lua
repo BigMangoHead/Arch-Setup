@@ -103,6 +103,7 @@ return {
     ),
 
     -- Small powers
+    make_small_power(1),
     make_small_power(2),
     make_small_power(3),
     make_small_power(4),
@@ -127,6 +128,12 @@ return {
             [[_{<>}]],
             { i(1) }
         ),
+        {condition = in_math}
+    ),
+
+    -- Zero subscript
+    s({trig = "kk", wordTrig = false, snippetType = "autosnippet" , dscr = "Subscript symbol"},
+        {t([[_]])},
         {condition = in_math}
     ),
 
