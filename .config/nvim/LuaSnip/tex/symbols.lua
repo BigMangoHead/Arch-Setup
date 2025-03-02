@@ -37,7 +37,7 @@ return {
     greek(";p", "pi"),
     greek(";r", "rho"),
     greek(";s", "sigma"),
-    greek(";t", "tau"),
+    greek(":t", "tau"),
     greek(";h", "phi"),
     symbol(":h", "varphi", "Other form of greek letter phi"),
     greek(";c", "chi"),
@@ -66,6 +66,9 @@ return {
     symbol("RR", "mathbb R", "Set of real numbers"),
     symbol("CC", "mathbb C", "Set of complex numbers"),
     symbol("FF", "mathbb F", "Finite field"),
+    symbol("PP", "mathbb P", "Projective plane"),
+    symbol("EE", "mathbb E", "Euclidean plane"),
+    symbol("AA", "mathbb A", "Alternative Euclidean plane"),
 
     -- Set operators
     symbol("sue", "subseteq", "Subset or equal"),
@@ -74,4 +77,5 @@ return {
 
     -- Group operators
     symbol("ngr", "trianglelefteq", "Normal subgroup"),
+    symbol("act", "curvearrowright", "Group action"),
 }
