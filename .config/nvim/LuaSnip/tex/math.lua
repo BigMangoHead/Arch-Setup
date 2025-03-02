@@ -131,6 +131,12 @@ return {
         {condition = in_math}
     ),
 
+    -- Subscript symbol
+    s({trig = "kk", wordTrig = false, snippetType = "autosnippet", dscr = "Subscript symbol"},
+        {t([[_]])},
+        {condition = in_math}
+    ),
+
     -- Zero subscript
     s({trig = "kk", wordTrig = false, snippetType = "autosnippet" , dscr = "Subscript symbol"},
         {t([[_]])},
@@ -160,6 +166,12 @@ return {
             [[\overline {<>}]],
             { i(1) }
         ),
+        {condition = in_math}
+    ),
+
+    -- Bold font
+    s({trig = "bf", wordTrig = false, snippetType = "autosnippet", dscr = "Math bold font"},
+        {t([[\mathbf ]])},
         {condition = in_math}
     ),
 
