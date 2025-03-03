@@ -12,3 +12,5 @@ mupdf # Another file viewer
 
 vifm # File explorer, mainly used for aur-utils
 mc # File explorer, occasionally use
+
+csvlens # .csv file viewer
