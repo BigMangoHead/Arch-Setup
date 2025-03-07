@@ -19,7 +19,7 @@ local data_buf_size = vim.g.compcodehorizsize or 60
 require('telescope').setup{ 
   defaults = { 
     file_ignore_patterns = { 
-      ".in", ".out"
+      ".in", ".out", ".want"
     }
   }
 }
@@ -30,25 +30,38 @@ vim.g.autosave_default = true
 
 -- Store code buffer
 local code_buf = vim.api.nvim_get_current_buf()
+local out_buf = ''
 
 -- Open input and output buffers
 local cur_file = vim.fn.expand('%:p')
 local base_dir = vim.fn.fnamemodify(cur_file, ':h')
 local base_file = vim.fn.fnamemodify(cur_file, ':r')
-local input, output = base_file .. '.in', base_file .. '.out'
+local input, output, want = base_file .. '.in', base_file .. '.out', base_file .. '.want'
 
 if vim.fn.filereadable(output) then
     vim.cmd(data_buf_size .. 'vsplit ' .. input)
     vim.cmd.wincmd('r')
     vim.cmd('split ' .. output)
+    out_buf = vim.api.nvim_get_current_buf()
+end
+
+-- Compile function
+local compile_function = function ()
+    local on_exit = function()
+        vim.schedule(function() vim.cmd('checktime ' .. out_buf) end)
+    end
+    vim.system({'autocompcode', cur_file}, {cwd = base_dir}, on_exit)
 end
 
 -- Timer for compiling and running code periodically
 local compile_timer = vim.uv.new_timer()
-compile_timer:start(0, 5000, vim.schedule_wrap(function ()
-    print(base_dir)
-    vim.system({'autocompcode', cur_file}) --, {cwd = base_dir})
-end))
+compile_timer:start(0, COMPILE_DELAY, vim.schedule_wrap(compile_function))
+
+-- Autocmd for compiling and running code on save
+vim.api.nvim_create_autocmd("BufWritePost", {
+    pattern = "*.cpp",
+    callback = compile_function
+})
 
 -- Add keybind to switch to a different problem
 vim.keymap.set('n', '<localleader>s', function()
