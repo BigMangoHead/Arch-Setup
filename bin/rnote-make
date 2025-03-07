@@ -2,4 +2,4 @@
 
 cp /home/bigma/.config/rnote-make/rnote-temp.rnote .
 mv rnote-temp.rnote "${1}.rnote"
-rnote "${1}.rnote"
+rnote "${1}.rnote" &
