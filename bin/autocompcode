@@ -1,0 +1,20 @@
+#!/bin/bash
+
+run () {
+    mkdir -p .runtime
+    g++ "$1" -o .runtime/exec 2> .runtime/complog
+    if [[ "$?" = 0 ]] then
+        .runtime/exec < "${1%.*}.in" > .runtime/out 2> .runtime/log
+        echo "===== OUT ====="
+        cat .runtime/out
+        echo "===== EXPECTED ====="
+        cat "${1%.*}.want"
+        echo "===== LOG ====="
+        cat .runtime/log
+    else
+        echo "===== ERROR ====="
+        cat .runtime/complog
+    fi
+}
+
+run "$@" > "${1%.*}.out"
