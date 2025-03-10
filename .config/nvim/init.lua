@@ -34,6 +34,11 @@ Plug('MunifTanjim/nui.nvim')
 -- Maximize a buffer
 Plug('markstory/vim-zoomwin')
 
+-- LSP Packages
+Plug('neovim/nvim-lspconfig')
+Plug('hrsh7th/cmp-nvim-lsp')
+Plug('hrsh7th/nvim-cmp')
+
 
 vim.call('plug#end')
 
@@ -65,3 +70,4 @@ vim.api.nvim_create_autocmd("BufEnter", {
 -- Call other configs
 require("settings")
 require("remap")
+require("lsp")

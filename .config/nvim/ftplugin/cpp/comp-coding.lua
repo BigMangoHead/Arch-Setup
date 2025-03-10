@@ -43,6 +43,7 @@ if vim.fn.filereadable(output) then
     vim.cmd.wincmd('r')
     vim.cmd('split ' .. output)
     out_buf = vim.api.nvim_get_current_buf()
+    vim.cmd('split ' .. want)
 end
 
 -- Compile function
@@ -59,7 +60,7 @@ compile_timer:start(0, COMPILE_DELAY, vim.schedule_wrap(compile_function))
 
 -- Autocmd for compiling and running code on save
 vim.api.nvim_create_autocmd("BufWritePost", {
-    pattern = "*.cpp",
+    pattern = "*.cpp, *.want, *.in",
     callback = compile_function
 })
 
@@ -69,6 +70,7 @@ vim.keymap.set('n', '<localleader>s', function()
     compile_timer:stop()
     pcall(function () 
         vim.cmd('bd ' .. code_buf)
+        vim.cmd('close')
         vim.cmd('close')
     end)
     telescope.find_files()
