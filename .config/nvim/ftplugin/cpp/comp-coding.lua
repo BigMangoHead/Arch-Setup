@@ -9,7 +9,7 @@ if vim.b.processedcompcode then return end
 vim.b.processedcompcode = true
 
 -- Load code templates location
-local TEMPLATE_LOC = vim.g.compcodetemplatedir or "/home/bigma/coding/comp/templates"
+local TEMPLATE_LOC = vim.g.compcodetemplatedir or "/home/bigma/coding/comp/templates/"
 
 -- Leave if in template location
 local cur_file = vim.fn.expand('%:p')
@@ -26,7 +26,7 @@ local telescope = require('telescope.builtin')
 require('telescope').setup{ 
   defaults = { 
     file_ignore_patterns = { 
-      ".in", ".out", ".want"
+      "%.in", "%.out", "%.want"
     }
   }
 }
