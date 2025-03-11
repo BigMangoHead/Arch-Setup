@@ -4,6 +4,12 @@ vim.keymap.set('n', "<leader>pv", vim.cmd.Ex)
 -- Copy to clipboard
 vim.keymap.set({'n', 'v'}, "<C-c>", [["+y]])
 
+-- Copy entire file
+vim.keymap.set({'n', 'v'}, "<C-y>", "<Cmd>%y<CR>")
+
+-- Copy entire file to clipboard
+vim.keymap.set({'n', 'v'}, "<C-S-y>", "<Cmd>%y+<CR>")
+
 -- Paste from clipboard
 vim.keymap.set({'n', 'v'}, "<C-v>", [["+p]])
 vim.keymap.set({'i'}, "<C-v>", [[<Esc>"+pa]])
