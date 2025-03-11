@@ -8,11 +8,18 @@ if not vim.g.compcodingmode then return end
 if vim.b.processedcompcode then return end
 vim.b.processedcompcode = true
 
--- Grab telescope library functions
-local telescope = require('telescope.builtin')
+-- Load code templates location
+local TEMPLATE_LOC = vim.g.compcodetemplatedir or "/home/bigma/coding/comp/templates"
+
+-- Leave if in template location
+local cur_file = vim.fn.expand('%:p')
+if cur_file:find("^" .. TEMPLATE_LOC) then return end
 
 -- Load size for input/output buffer
 local data_buf_size = vim.g.compcodehorizsize or 60
+
+-- Grab telescope library functions
+local telescope = require('telescope.builtin')
 
 
 -- Ignore input and output files with telescope
@@ -33,7 +40,6 @@ local code_buf = vim.api.nvim_get_current_buf()
 local out_buf = ''
 
 -- Open input and output buffers
-local cur_file = vim.fn.expand('%:p')
 local base_dir = vim.fn.fnamemodify(cur_file, ':h')
 local base_file = vim.fn.fnamemodify(cur_file, ':r')
 local input, output, want = base_file .. '.in', base_file .. '.out', base_file .. '.want'
@@ -74,4 +80,12 @@ vim.keymap.set('n', '<localleader>s', function()
         vim.cmd('close')
     end)
     telescope.find_files()
+end)
+
+-- Add keybind to view templates
+vim.keymap.set('n', '<localleader>t', function()
+    vim.g.compcodingbuffer = code_buf
+    telescope.find_files({
+        cwd = TEMPLATE_LOC
+    })
 end)
