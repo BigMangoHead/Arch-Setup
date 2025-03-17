@@ -98,9 +98,19 @@ function mn_open.run(cmd_args, class_dir, config)
     file:write(project_dir)
     file:close()
 
+    -- Support old form
     if config.exec then
         os.execute("bash \"" .. class_dir .. "/" .. config.exec .. "\"")
     end
+    -- Current forms
+    if config.exec_all then
+        os.execute("bash \"" .. class_dir .. "/" .. config.exec_all .. "\"")
+    end
+    if hw_path and config.exec_hw and string.find(project_dir, '^' .. hw_path) then
+        os.execute("bash \"" .. class_dir .. "/" .. config.exec_hw .. "\"")
+    end
+
+
 
 
 end
