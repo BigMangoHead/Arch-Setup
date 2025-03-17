@@ -5,3 +5,7 @@
 	defaultBranch = main
 [core]
 	excludesfile = /home/bigma/.gitignore
+[credential]
+	helper = store
+[alias]
+	uncommit = reset HEAD^
