@@ -1,5 +1,6 @@
 
 local COMPILE_DELAY = 5000 -- Time in milliseconds between compiling + running
+local RUN_TIMEOUT = 1.5 -- Time in seconds before closing program
 
 -- Leave if not in competitive coding mode
 if not vim.g.compcodingmode then return end
@@ -57,7 +58,8 @@ local compile_function = function ()
     local on_exit = function()
         vim.schedule(function() vim.cmd('checktime ' .. out_buf) end)
     end
-    vim.system({'autocompcode', cur_file}, {cwd = base_dir}, on_exit)
+    vim.system({'autocompcode', cur_file, RUN_TIMEOUT}, {cwd = base_dir}, on_exit)
+    -- vim.system({'.runtime/exec'}, {cwd = base_dir, timeout = RUN_TIMEOUT}, on_exit)
 end
 
 -- Timer for compiling and running code periodically
@@ -66,7 +68,7 @@ compile_timer:start(0, COMPILE_DELAY, vim.schedule_wrap(compile_function))
 
 -- Autocmd for compiling and running code on save
 vim.api.nvim_create_autocmd("BufWritePost", {
-    pattern = "*.cpp, *.want, *.in",
+    pattern = {"*.cpp", "*.want", "*.in"},
     callback = compile_function
 })
 

@@ -7,6 +7,23 @@ local line_begin = helper.line_begin
 
 -- Snippets
 return {
+    -- Vectors
+    s({ trig = "vv", snippetType = "autosnippet", dscr = "General vector" },
+        fmta(
+            [[
+                vector<<<>>>
+            ]],
+            { i(1) }
+        ),
+        {condition = line_begin}
+    ),
+
+    s({ trig = "vi", dscr = "Integer vector"},
+        t("vector<int>")
+    ),
+
+    
+
     -- For loops
     s({ trig = "fr", snippetType = "autosnippet", dscr = "Integer for loop" },
         fmta(
@@ -45,7 +62,7 @@ return {
     ),
 
     -- Binary search
-    s({trig = "bss", snippetType = "autosnippet", dscr = "Binary search tempalte" },
+    s({trig = "bss", snippetType = "autosnippet", dscr = "Binary search template" },
         fmta(
             [[
                 auto bs_check = [&](const int& x) {
@@ -67,4 +84,6 @@ return {
         ),
         {condition = line_begin}
     ),
+
+
 }
