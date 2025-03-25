@@ -56,8 +56,8 @@ return {
     -- Dots
     symbol("ld", "ldots", "Three dots"),
 
-    -- Curve in group action
-    symbol("cur", "curvearrowright", "Group action symbol"),
+    -- Right arrow
+    symbol("rar", "rightarrow", "Right arrow"),
 
     -- Common set symbols
     symbol("NN", "mathbb N", "Set of positive integers"),
@@ -78,4 +78,7 @@ return {
     -- Group operators
     symbol("ngr", "trianglelefteq", "Normal subgroup"),
     symbol("act", "curvearrowright", "Group action"),
+
+    -- Curve in group action
+    symbol("cur", "curvearrowright", "Group action symbol"),
 }
