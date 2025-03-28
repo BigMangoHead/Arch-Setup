@@ -76,6 +76,8 @@ function binding_handler.bind_keys(window_manager, main_menu)
 	 {description = "reload awesome", group = "awesome"}),
       awful.key({ vars.modkey, "Shift"   }, "q", awesome.quit,
 	 {description = "quit awesome", group = "awesome"}),
+      awful.key({ vars.modkey, "Shift"   }, "l", function () awful.spawn(vars.sleep_cmd) end,
+	 {description = "sleep", group = "awesome"}),
       awful.key({ vars.modkey,           }, "/", function () awful.spawn(vars.browser) end,
 	 {description = "open a browser", group = "launcher"}), 
       awful.key({ vars.modkey,           }, "Print", function () awful.spawn("screenshot-full") end,
@@ -83,7 +85,7 @@ function binding_handler.bind_keys(window_manager, main_menu)
       awful.key({ vars.modkey, "Shift"   }, "Print", function () awful.spawn("screenshot-partial") end,
 	 {description = "take a cropped screenshot", group = "screen"}), 
       awful.key({ vars.modkey, "Control"   }, "Print", extra_functions.math_screenshot,
-	 {description = "take a cropped screenshot", group = "screen"}), 
+	 {description = "save a screenshot to mn document", group = "screen"}), 
 
       -- Layout manipulation
       awful.key({ vars.modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
