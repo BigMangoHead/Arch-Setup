@@ -8,7 +8,7 @@ local line_begin = helper.line_begin
 -- Snippets
 return {
     -- Braces
-    s({ trig = "{s", dscr = "Curly bracket"},
+    s({ trig = "{s", snippetType = "autosnippet", dscr = "Curly bracket"},
         fmta(
             [[
                 {

@@ -70,4 +70,4 @@ vim.api.nvim_create_autocmd("BufEnter", {
 -- Call other configs
 require("settings")
 require("remap")
-require("lsp")
+require("lsp-new")
