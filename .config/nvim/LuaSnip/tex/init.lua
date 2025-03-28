@@ -6,6 +6,10 @@ local in_text = helper.in_text
 
 -- Snippets
 return {
+    -- Jump forward
+    -- s({ trig = "; ", snippetType = "autosnippet", dscr = "Jump forward in math mode" },
+
+
     -- Equation
     s({ trig = "eq", dscr = "Expands into equation environment" },
         fmta(
