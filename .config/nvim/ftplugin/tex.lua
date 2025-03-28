@@ -14,4 +14,3 @@ vim.keymap.set({'n'}, "cs$", "<Plug>(vimtex-env-change-math)")
 
 -- Change to align* environment
 vim.keymap.set({'n'}, "csa", "<Plug>(vimtex-env-change-math)align*<CR>")
-
