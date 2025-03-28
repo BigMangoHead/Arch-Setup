@@ -7,6 +7,18 @@ local line_begin = helper.line_begin
 
 -- Snippets
 return {
+    -- Braces
+    s({ trig = "{s", dscr = "Curly bracket"},
+        fmta(
+            [[
+                {
+                    <>
+                }
+            ]],
+            { i(1) }
+        )
+    ),
+
     -- Vectors
     s({ trig = "vv", snippetType = "autosnippet", dscr = "General vector" },
         fmta(
@@ -22,6 +34,44 @@ return {
         t("vector<int>")
     ),
 
+    s({ trig = "vii", dscr = "Integer matrix"},
+        t("vector<vector<int>>")
+    ),
+
+    -- Read vectors
+    s({ trig = "readvi", descr = "Read integer vector", priority = 2000},
+        fmta(
+            [[
+                vector<<int>> <>(<>);
+                for (int i=0; i << <>; i++) {
+                    int x;
+                    cin >>>> x;
+                    <>[i] = x;
+                }
+
+            ]],
+            { i(1), i(2), rep(2), rep(1) }
+        ),
+        {condition = line_begin}
+    ),
+
+    s({ trig = "readvii", descr = "Read integer matrix", priority = 2000},
+        fmta(
+            [[
+                vector<<vector<<int>>>> <>(<>, vector<<int>>(<>));
+                for (int i=0; i << <>; i++) {
+                    for (int j=0; j << <>; j++) {
+                        int x;
+                        cin >>>> x;
+                        <>[i][j] = x;
+                    }
+                }
+
+            ]],
+            { i(1), i(2), i(3), rep(2), rep(3), rep(1) }
+        ),
+        {condition = line_begin}
+    ),
     
 
     -- For loops
