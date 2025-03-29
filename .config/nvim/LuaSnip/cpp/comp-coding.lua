@@ -72,25 +72,29 @@ return {
         ),
         {condition = line_begin}
     ),
-    
 
-    -- For loops
-    s({ trig = "fr", snippetType = "autosnippet", dscr = "Integer for loop" },
-        fmta(
-            [[
-                for (int <>; <>; <>) {
-                    <>
-                }
-            ]],
-            { i(1), i(2), i(3), i(4) }
-        ),
-        {condition = line_begin}
+    -- Integer pair
+    s({ trig = "pi", dscr = "Pair of integers"},
+        t("pair<int, int>")
     ),
 
+    -- For loops
     s({ trig = "foi", snippetType = "autosnippet", dscr = "For all i loop" },
         fmta(
             [[
                 for (int i=0; i << <>; i++) {
+                    <>
+                }
+            ]],
+            { i(1), i(2) }
+        ),
+        {condition = line_begin}
+    ),
+
+    s({ trig = "foj", snippetType = "autosnippet", dscr = "For all j loop" },
+        fmta(
+            [[
+                for (int j=0; j << <>; j++) {
                     <>
                 }
             ]],
