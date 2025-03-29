@@ -67,7 +67,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
   group = aug,
 })
 
--- Call other configs
+-- Load other configs
 require("settings")
 require("remap")
 require("lsp-new")

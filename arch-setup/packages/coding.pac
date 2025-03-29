@@ -15,3 +15,6 @@ tree-sitter-cli # Needed for parsing latex
 
 # Needed by VimTex
 biber
+
+# Improves telescope
+fd

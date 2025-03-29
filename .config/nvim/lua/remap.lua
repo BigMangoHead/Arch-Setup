@@ -20,3 +20,7 @@ vim.keymap.set({'n', 'v'}, "k", [[gk]])
 
 -- Reload LuaSnips
 vim.keymap.set('n', '<Leader>rl', '<Cmd>lua require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/LuaSnip/"})<CR>')
+
+-- Switch theme
+vim.keymap.set('n', '<Leader>tl', '<Cmd>let g:CURTHEME="kanagawa-lotus"<CR><Cmd>colorscheme kanagawa-lotus<CR>')
+vim.keymap.set('n', '<Leader>td', '<Cmd>let g:CURTHEME="kanagawa-wave"<CR><Cmd>colorscheme kanagawa-wave<CR>')

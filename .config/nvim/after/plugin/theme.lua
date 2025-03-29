@@ -24,5 +24,10 @@ require('kanagawa').setup({
     },
 })
 
--- setup must be called before loading
-vim.cmd("colorscheme kanagawa")
+-- Load colortheme once SHADA file is loaded
+vim.api.nvim_create_autocmd("VimEnter", {
+  desc = "Update theme after SHADA file is loeaded",
+  pattern = "*",
+  command = "execute ':colorscheme ' . g:CURTHEME",
+  group = aug,
+})
