@@ -1,3 +1,5 @@
+local telescope = require('telescope.builtin')
+
 -- Exit from file to explorer
 vim.keymap.set('n', "<leader>pv", vim.cmd.Ex)
 
@@ -20,6 +22,23 @@ vim.keymap.set({'n', 'v'}, "k", [[gk]])
 
 -- Reload LuaSnips
 vim.keymap.set('n', '<Leader>rl', '<Cmd>lua require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/LuaSnip/"})<CR>')
+
+-- Edit LuaSnippets
+local openls = function ()
+    vim.g.returnbuffer = vim.api.nvim_get_current_buf()
+    telescope.find_files({
+        cwd = '~/.config/nvim/LuaSnip/'
+    })
+end
+local closels = function ()
+    local tmp_buf = vim.api.nvim_get_current_buf()
+    vim.cmd("bu " .. vim.g.returnbuffer)
+    vim.cmd("bd " .. tmp_buf)
+    require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/LuaSnip/"})
+end
+    
+vim.keymap.set('n', '<Leader>cls', openls)
+vim.keymap.set('n', '<Leader>bb', closetmp)
 
 -- Switch theme
 vim.keymap.set('n', '<Leader>tl', '<Cmd>let g:CURTHEME="kanagawa-lotus"<CR><Cmd>colorscheme kanagawa-lotus<CR>')
