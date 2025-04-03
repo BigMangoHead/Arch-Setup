@@ -192,4 +192,21 @@ return {
         {condition = in_math}
     ),
 
+    -- Derivatives
+    s({trig = "dff", wordTrig = false, snippetType = "autosnippet", dscr = "Ordinary derivative"},
+        fmta(
+            [[\frac{d<>}{d<>}]],
+            { i(1), i(2) }
+        ),
+        {condition = in_math}
+    ),
+
+    s({trig = "dfp", wordTrig = false, snippetType = "autosnippet", dscr = "Partial derivative"},
+        fmta(
+            [[\frac{\partial <>}{\partial <>}]],
+            { i(1), i(2) }
+        ),
+        {condition = in_math}
+    ),
+
 }
