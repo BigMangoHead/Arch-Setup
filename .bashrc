@@ -31,4 +31,7 @@ alias homegit='/usr/bin/git --git-dir=$HOME/arch-setup/homegit/ --work-tree=$HOM
 # Math notes command
 alias mn='source ~/scripts/lua/mn/mn.sh'
 
+# Quick DRP reference
+alias drp='mupdf ~/math/classes/undergrad/drp-s25/Rat\ points\ on\ ECs\ -\ Silverman\ and\ Tate.pdf &'
+
 PS1='[\u@\h \W]\$ '
