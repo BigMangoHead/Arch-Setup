@@ -66,8 +66,16 @@ function mn_make.run(cmd_args, class_dir, config)
     file:write(path .. "/" .. name)
     file:close()
 
+    -- Support old form
     if config.exec then
         os.execute("bash \"" .. class_dir .. "/" .. config.exec .. "\"")
+    end
+    -- Current forms
+    if config.exec_all then
+        os.execute("bash \"" .. class_dir .. "/" .. config.exec_all .. "\"")
+    end
+    if cmd_args[3] == "hw" and config.exec_hw then
+        os.execute("bash \"" .. class_dir .. "/" .. config.exec_hw .. "\"")
     end
 
 
