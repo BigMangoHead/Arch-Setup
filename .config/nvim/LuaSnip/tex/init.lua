@@ -79,6 +79,21 @@ return {
         ),
         {condition = line_begin}
     ),
+
+    -- Definition environment
+    s({ trig = "de", dscr = "Expands into definition environment" },
+        fmta(
+            [[
+                \begin{definition}
+                    <>
+                \end{definition}
+                <>
+            ]],
+            { i(1), i(0) }
+        ),
+        {condition = line_begin}
+    ),
+
     -- Begin environment
     s({ trig = "be", dscr = "Expands into beginning any environment" },
         fmta(
