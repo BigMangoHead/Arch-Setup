@@ -80,6 +80,20 @@ return {
         {condition = line_begin}
     ),
 
+    -- Corollary environment
+    s({ trig = "co", dscr = "Expands into corollary environment" },
+        fmta(
+            [[
+                \begin{corollary}
+                    <>
+                \end{corollary}
+                <>
+            ]],
+            { i(1), i(0) }
+        ),
+        {condition = line_begin}
+    ),
+
     -- Definition environment
     s({ trig = "de", dscr = "Expands into definition environment" },
         fmta(
