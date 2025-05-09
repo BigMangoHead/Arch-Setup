@@ -85,7 +85,7 @@ vim.keymap.set('n', '<localleader>s', function()
 end)
 
 -- Add keybind to view templates
-vim.keymap.set('n', '<localleader>t', function()
+vim.keymap.set('n', 'T', function()
     vim.g.compcodingbuffer = code_buf
     telescope.find_files({
         cwd = TEMPLATE_LOC
