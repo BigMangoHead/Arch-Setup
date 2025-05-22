@@ -19,12 +19,6 @@ alias cm='cd ~/math/classes/undergrad'
 # Competitive coding helper program
 alias cpit='python3 /home/bigma/builds/python/CPIT/cpit.py' 
 
-# Shortcut for creating code templates
-alias cctemplate='bash /home/bigma/builds/python/CPIT-ADDON/add.sh'
-
-# Shortcut for checking code
-alias ccheck='cpit checker build/Debug/outDebug'
-
 # For working with dotfiles
 alias homegit='/usr/bin/git --git-dir=$HOME/arch-setup/homegit/ --work-tree=$HOME'
 
@@ -32,6 +26,12 @@ alias homegit='/usr/bin/git --git-dir=$HOME/arch-setup/homegit/ --work-tree=$HOM
 alias mn='source ~/scripts/lua/mn/mn.sh'
 
 # Quick DRP reference
-alias drp='mupdf ~/math/classes/undergrad/drp-s25/Rat\ points\ on\ ECs\ -\ Silverman\ and\ Tate.pdf &'
+alias drp='cd /home/bigma/math/classes/undergrad/drp-s25; mupdf ~/math/classes/undergrad/drp-s25/Rat\ points\ on\ ECs\ -\ Silverman\ and\ Tate.pdf &'
+
+# Quick ARML team reference
+alias arml='cd ~/math/teaching/coaching/ARML-2025'
+
+# Quick Putnam studying reference
+alias putnam='cd ~/math/math-comp/meets/summer-2025/; mupdf PutnamAndBeyond-Andreescu.pdf &'
 
 PS1='[\u@\h \W]\$ '
