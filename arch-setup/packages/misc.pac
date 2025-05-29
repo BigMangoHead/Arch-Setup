@@ -33,6 +33,8 @@ nerd-fonts # Lots and lots of fonts
 
 ntp # ntpd command syncs computer with UTC time
 
+xautomation # Hold keys down with commands
+
 acpilight # Brightness adjustment
 
 rclone # File syncing w/ cloud storages and devices
