@@ -94,10 +94,33 @@ end)
 
 -- Keybinds for faster navigation
 vim.keymap.set('n', '<localleader>i', function()
-    local windowNumber = vim.fn.bufwinnr(".in")
-    vim.cmd("execute " .. windowNumber .. " 'wincmd w'")
+    vim.cmd.wincmd('l');
+    vim.cmd.wincmd('j');
+    vim.cmd.wincmd('j');
 end)
 vim.keymap.set('n', '<localleader>o', function()
-    local windowNumber = vim.fn.bufwinnr(".want")
-    vim.cmd("execute " .. windowNumber .. " 'wincmd w'")
+    vim.cmd.wincmd('l');
+    vim.cmd.wincmd('k');
+    vim.cmd.wincmd('k');
 end)
+
+-- Keybinds to paste input and output
+vim.keymap.set('n', '<localleader>pi', function()
+    vim.cmd.wincmd('l');
+    vim.cmd.wincmd('j');
+    vim.cmd.wincmd('j');
+    -- Delete file, paste clipboard contents, delete extra newline
+    vim.cmd('normal! ggdG"+pkdd')
+    vim.cmd.write()
+    vim.cmd.wincmd('h')
+end)
+vim.keymap.set('n', '<localleader>po', function()
+    vim.cmd.wincmd('l');
+    vim.cmd.wincmd('k');
+    vim.cmd.wincmd('k');
+    -- Delete file, paste clipboard contents, delete extra newline
+    vim.cmd('normal! ggdG"+pkdd')
+    vim.cmd.write()
+    vim.cmd.wincmd('h')
+end)
+
