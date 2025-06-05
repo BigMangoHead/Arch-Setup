@@ -91,3 +91,13 @@ vim.keymap.set('n', 'T', function()
         cwd = TEMPLATE_LOC
     })
 end)
+
+-- Keybinds for faster navigation
+vim.keymap.set('n', '<localleader>i', function()
+    local windowNumber = vim.fn.bufwinnr(".in")
+    vim.cmd("execute " .. windowNumber .. " 'wincmd w'")
+end)
+vim.keymap.set('n', '<localleader>o', function()
+    local windowNumber = vim.fn.bufwinnr(".want")
+    vim.cmd("execute " .. windowNumber .. " 'wincmd w'")
+end)
