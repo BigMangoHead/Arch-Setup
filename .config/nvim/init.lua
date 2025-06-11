@@ -29,7 +29,7 @@ Plug('tpope/vim-fugitive')
 Plug('nvim-lua/plenary.nvim')
 Plug('nvim-tree/nvim-web-devicons')
 Plug('MunifTanjim/nui.nvim')
---Plug('nvim-neo-tree/neo-tree.nvim', { ['branch'] = 'v3.x'})
+Plug('nvim-neo-tree/neo-tree.nvim', { ['branch'] = 'v3.x'})
 
 -- Maximize a buffer
 Plug('markstory/vim-zoomwin')
