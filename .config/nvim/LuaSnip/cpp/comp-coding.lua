@@ -78,6 +78,49 @@ return {
         t("pair<int, int>")
     ),
 
+    s({ trig = "vl", dscr = "Long long vector"},
+        t("vector<ll>")
+    ),
+
+    s({ trig = "vll", dscr = "Long long matrix"},
+        t("vector<vector<ll>>")
+    ),
+
+    -- Read long long vectors
+    s({ trig = "readvl", descr = "Read long long vector", priority = 2000},
+        fmta(
+            [[
+                vector<<ll>> <>(<>);
+                for (int i=0; i << <>; i++) {
+                    ll x;
+                    cin >>>> x;
+                    <>[i] = x;
+                }
+
+            ]],
+            { i(1), i(2), rep(2), rep(1) }
+        ),
+        {condition = line_begin}
+    ),
+
+    s({ trig = "readvll", descr = "Read long long matrix", priority = 2000},
+        fmta(
+            [[
+                vector<<vector<<ll>>>> <>(<>, vector<<ll>>(<>));
+                for (int i=0; i << <>; i++) {
+                    for (int j=0; j << <>; j++) {
+                        ll x;
+                        cin >>>> x;
+                        <>[i][j] = x;
+                    }
+                }
+
+            ]],
+            { i(1), i(2), i(3), rep(2), rep(3), rep(1) }
+        ),
+        {condition = line_begin}
+    ),
+
     -- For loops
     s({ trig = "foi", snippetType = "autosnippet", dscr = "For all i loop" },
         fmta(
