@@ -15,3 +15,5 @@ mc # File explorer, occasionally use
 
 csvlens # .csv file viewer
 libreoffice # microsoft file viewer
+
+fzf # Lightweight fuzzy finder, used in my pacfind script
