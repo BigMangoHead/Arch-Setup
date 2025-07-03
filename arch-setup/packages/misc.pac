@@ -39,3 +39,5 @@ acpilight # Brightness adjustment
 
 rclone # File syncing w/ cloud storages and devices
 syncthing # File syncing designed for computer to computer 
+
+bitwarden # Password manager
