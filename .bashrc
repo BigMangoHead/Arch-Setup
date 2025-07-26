@@ -8,6 +8,9 @@
 export PATH=$PATH:~/bin
 export MANPATH=:~/.man
 
+# Vi mode
+set -o vi
+
 alias ls='ls --color=auto'
 alias laa='ls -lah --color=auto'
 alias sls='screen -ls'
@@ -15,9 +18,6 @@ alias grep='grep --color=auto'
 
 # Quick command for moving to math classes directory
 alias cm='cd ~/math/classes/undergrad'
-
-# Competitive coding helper program
-alias cpit='python3 /home/bigma/builds/python/CPIT/cpit.py' 
 
 # For working with dotfiles
 alias homegit='/usr/bin/git --git-dir=$HOME/arch-setup/homegit/ --work-tree=$HOME'
