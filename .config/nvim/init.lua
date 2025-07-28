@@ -39,6 +39,8 @@ Plug('neovim/nvim-lspconfig')
 Plug('hrsh7th/cmp-nvim-lsp')
 Plug('hrsh7th/nvim-cmp')
 
+-- Bracket closing
+Plug('m4xshen/autoclose.nvim')
 
 vim.call('plug#end')
 
