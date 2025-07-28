@@ -3,4 +3,4 @@
 #
 # Syntax: simple "KEY=VAL" pairs on separate lines
 #
-ENABLE_CAPS_REMAP=1
+TEXINPUTS=./.cls:

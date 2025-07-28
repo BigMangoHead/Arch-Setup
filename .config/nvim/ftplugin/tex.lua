@@ -1,6 +1,11 @@
 vim.g.custom_autosave_default = true;
 
-vim.g.vimtex_compiler_latexmk = { aux_dir = ".aux", out_dir = "out" }
+vim.g.vimtex_compiler_latexmk = { 
+    aux_dir = ".aux", 
+    out_dir = "out",
+    -- Default options
+    options = {"-synctex=1", "-interaction=nonstopmode", "-file-line-error", "-verbose"}
+}
 
 -- Keybinds
 -- Compile command

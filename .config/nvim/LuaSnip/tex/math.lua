@@ -209,4 +209,13 @@ return {
         {condition = in_math}
     ),
 
+    -- Combinations
+    s({trig = "cho", wordTrig = false, snippetType = "autosnippet", dscr = "Combination"},
+        fmta(
+            [[\binom{<>}{<>}]],
+            { i(1), i(2) }
+        ),
+        {condition = in_math}
+    ),
+
 }

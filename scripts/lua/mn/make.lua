@@ -48,15 +48,23 @@ function mn_make.run(cmd_args, class_dir, config)
     end
 
     lfs.chdir(path)
-    lfs.mkdir(name)
+    --lfs.mkdir(name)
 
+    -- Copy template folder into a new directory
     local template_path = class_dir
-    local latex_path = path .. "/" .. name .. "/" .. config.latex_file_name  
-    if config.file_location and config.file_location.template and config.latex_file_name then
-            template_path = template_path .. "/" .. config.file_location.template
-            os.execute("cp \"" .. template_path .. "\" \"" .. latex_path .. "\"")
+    if config.file_location and config.file_location.template then
+        template_path = template_path .. "/" .. config.file_location.template
+        new_folder_path = path .. "/" .. name
+        os.execute("cp -r \"" .. template_path .. "\" \"" .. new_folder_path .. "\"")
     else
-        error("Missing config entires for either file_location.template or latex_file_name")
+        error("Missing config entry for file_location.template")
+    end
+
+    local latex_path
+    if config.latex_file_name then
+        latex_path = path .. "/" .. name .. "/" .. config.latex_file_name  
+    else
+        error("Missing config entry for latex_file_name")
     end
 
     local file = io.open(DATA_STORAGE_PATH .. "/mn-latex-file-location","w")
