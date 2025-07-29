@@ -56,7 +56,7 @@ function screen_handler.init(window_manager, mymenu, wallpaper_handler, wibar_ha
 	 }
 
 	 -- Create the wibox
-	 s.mywibox = awful.wibar({ position = "top", screen = s })
+	 s.mywibox = awful.wibar({ position = "top", screen = s, opacity = 0.8 })
 	 
 	 -- Add widgets to the wibox
 	 s.mywibox:setup {
