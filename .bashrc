@@ -28,6 +28,9 @@ alias mn='source ~/scripts/lua/mn/mn.sh'
 # Quick DRP reference
 alias drp='cd /home/bigma/math/classes/undergrad/drp-s25; mupdf ~/math/classes/undergrad/drp-s25/Rat\ points\ on\ ECs\ -\ Silverman\ and\ Tate.pdf &'
 
+# Quick GMTK game jam reference
+alias gmtk='cd /home/bigma/coding/projects/gmtk-2025/gmtk-jam-2025'
+
 # Quick ARML team reference
 alias arml='cd ~/math/teaching/coaching/ARML-2025'
 
