@@ -9,6 +9,9 @@ python-pipx
 # Lua package installer
 luarocks
 
+# Webdev stuff
+npm
+
 # Treesitter for code highlighting
 tree-sitter
 tree-sitter-cli # Needed for parsing latex
