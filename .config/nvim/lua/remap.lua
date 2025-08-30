@@ -58,5 +58,5 @@ vim.keymap.set('n', '<Leader>tl', '<Cmd>let g:CURTHEME="kanagawa-lotus"<CR><Cmd>
 vim.keymap.set('n', '<Leader>td', '<Cmd>let g:CURTHEME="kanagawa-wave"<CR><Cmd>colorscheme kanagawa-wave<CR>')
 
 -- Toggle spellcheck
-vim.keymap.set('n', '<Leader>ts', function() vim_opt_toggle("spell", true, false, "Spelling"))
+vim.keymap.set('n', '<Leader>ts', function() vim_opt_toggle("spell", true, false, "Spelling") end)
 
