@@ -116,4 +116,8 @@ return {
     -- Enumerate environment
     environment("en", "enumerate", "Expands into enumerate environment"),
     environment("enu", "enumerate", "Expands into enumerate environment"),
+
+    -- Itemize environment
+    environment("it", "itemize", "Expands into itemize environment"),
+    environment("ite", "itemize", "Expands into itemize environment"),
 }
