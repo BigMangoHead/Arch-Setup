@@ -3,10 +3,14 @@ local helper = require('luasnip-helper')
 local in_math = helper.in_math
 
 -- Snippet Helpers
-local function symbol(a, b, c)
+local function expression(a, b, c)
     return s({trig = a, wordTrig = false, snippetType = "autosnippet", dscr = c},
-                {t("\\" .. b)},
+                {t(b)},
             {condition = in_math})
+end
+
+local function symbol(a, b, c)
+    return expression(a, "\\" .. b, c)
 end
 
 local function greek(a, b)
@@ -58,8 +62,9 @@ return {
 
     -- Right arrow
     symbol("rar", "rightarrow", "Right arrow"),
+    symbol("Rar", "rightrightarrows", "Two right arrows"),
 
-    -- Common set symbols
+    -- Simple math blackboard symbols
     symbol("NN", "mathbb N", "Set of positive integers"),
     symbol("ZZ", "mathbb Z", "Set of integers"),
     symbol("QQ", "mathbb Q", "Set of rationals"),
@@ -69,6 +74,11 @@ return {
     symbol("PP", "mathbb P", "Projective plane"),
     symbol("EE", "mathbb E", "Euclidean plane"),
     symbol("AA", "mathbb A", "Alternative Euclidean plane"),
+    symbol("DD", "mathbb D", "Open disk"),
+
+    -- More complex ones
+    expression("Cc", [[\widehat{\mathbb C}]], "Extended complex plane"),
+    expression("cC", [[\widehat{\mathbb C}]], "Extended complex plane"),
 
     -- Set operators
     symbol("sue", "subseteq", "Subset or equal"),

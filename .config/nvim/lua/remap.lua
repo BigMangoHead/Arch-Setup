@@ -1,5 +1,18 @@
 local telescope = require('telescope.builtin')
 
+-- Function to toggle options, from Mhalter3378 on Reddit
+local function vim_opt_toggle(opt, on, off, name)
+    local message = name
+    if vim.opt[opt]:get() == off then
+        vim.opt[opt] = on
+        message = message .. " Enabled"
+    else
+        vim.opt[opt] = off
+        message = message .. " Disabled"
+    end
+    vim.notify(message)
+end
+
 -- Exit from file to explorer
 vim.keymap.set('n', "<leader>pv", vim.cmd.Ex)
 
@@ -43,3 +56,7 @@ vim.keymap.set('n', '<Leader>bb', closels)
 -- Switch theme
 vim.keymap.set('n', '<Leader>tl', '<Cmd>let g:CURTHEME="kanagawa-lotus"<CR><Cmd>colorscheme kanagawa-lotus<CR>')
 vim.keymap.set('n', '<Leader>td', '<Cmd>let g:CURTHEME="kanagawa-wave"<CR><Cmd>colorscheme kanagawa-wave<CR>')
+
+-- Toggle spellcheck
+vim.keymap.set('n', '<Leader>ts', function() vim_opt_toggle("spell", true, false, "Spelling"))
+

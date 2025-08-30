@@ -46,3 +46,5 @@ vim.opt.isfname:append("@-@")
 
 -- Faster vim updates
 vim.opt.updatetime = 50
+
+vim.opt.spelllang="en_us"
