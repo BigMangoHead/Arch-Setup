@@ -3,6 +3,7 @@ local helper = require('luasnip-helper')
 local line_begin = helper.line_begin
 local in_math = helper.in_math
 local in_text = helper.in_text
+local get_visual = helper.get_visual
 
 local function environment(trig, env, dscr)
     return s({ trig = trig, dscr = dscr },
@@ -116,4 +117,8 @@ return {
     -- Enumerate environment
     environment("en", "enumerate", "Expands into enumerate environment"),
     environment("enu", "enumerate", "Expands into enumerate environment"),
+
+    -- Itemize environment
+    environment("it", "itemize", "Expands into itemize environment"),
+    environment("ite", "itemize", "Expands into itemize environment"),
 }

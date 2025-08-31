@@ -1,6 +1,7 @@
 -- Conditions
 local helper = require('luasnip-helper')
 local in_math = helper.in_math
+local get_visual = helper.get_visual
 
 local function make_small_power(x)
     return s({ trig = "j" .. x, wordTrig = false, snippetType = "autosnippet" , dscr = x .. "-th power"},
@@ -18,26 +19,65 @@ end
 
 -- Snippets
 return {
+    -- Delimiters
+    -- Parenthesis (mainly for visual mode insert)
+    s({ trig = "par", wordTrig = false, snippetType = "autosnippet" , dscr = "Parenthesis"},
+        fmta(
+            [[(<>)]],
+            { d(1, get_visual) }
+        ),
+        {condition = in_math}
+    ),
+
     -- Set brackets
-    s({ trig = "set", wordTrig = false, snippetType = "autosnippet" , dscr = "Expands into a set brackets"},
+    s({ trig = "set", wordTrig = false, snippetType = "autosnippet" , dscr = "Set brackets"},
         fmta(
             [[\{<>\}]],
-            { i(1) }
+            { d(1, get_visual) }
         ),
         {condition = in_math}
     ),
 
     -- Langle, rangle brackets
-    s({ trig = "lan", wordTrig = false, snippetType = "autosnippet" , dscr = "Expands into a set brackets"},
+    s({ trig = "lan", wordTrig = false, snippetType = "autosnippet" , dscr = "Angled brackets"},
         fmta(
             [[\langle <> \rangle]],
-            { i(1) }
+            { d(1, get_visual) }
         ),
         {condition = in_math}
     ),
 
+    -- Floor
+    s({ trig = "flo", wordTrig = false, snippetType = "autosnippet" , dscr = "Floor"},
+        fmta(
+            [[\lfloor <> \rfloor]],
+            { d(1, get_visual) }
+        ),
+        {condition = in_math}
+    ),
+
+    -- Ceiling
+    s({ trig = "cei", wordTrig = false, snippetType = "autosnippet" , dscr = "Ceiling"},
+        fmta(
+            [[\lceil <> \rceil]],
+            { d(1, get_visual) }
+        ),
+        {condition = in_math}
+    ),
+
+    -- Absolute value
+    s({ trig = "abs", wordTrig = false, snippetType = "autosnippet" , dscr = "Absolute value"},
+        fmta(
+            [[\lvert <> \rvert]],
+            { d(1, get_visual) }
+        ),
+        {condition = in_math}
+    ),
+
+
+
     -- Fraction
-    s({ trig = "fj", wordTrig = false, snippetType = "autosnippet" , dscr = "Expands into a fraction"},
+    s({ trig = "fj", wordTrig = false, snippetType = "autosnippet" , dscr = "Fraction"},
         fmta(
             "\\frac{<>}{<>}",
             { i(1), i(2) }
@@ -46,7 +86,7 @@ return {
     ),
 
     -- Square root
-    s({ trig = "sq", wordTrig = false, snippetType = "autosnippet" , dscr = "Expands into square root"},
+    s({ trig = "sq", wordTrig = false, snippetType = "autosnippet" , dscr = "Square root"},
         fmta(
             [[\sqrt{<>}]],
             { i(1) }
@@ -55,7 +95,7 @@ return {
     ),
 
     -- Square root with custom power
-    s({ trig = "Sq", wordTrig = false, snippetType = "autosnippet" , dscr = "Expands into n-th root"},
+    s({ trig = "Sq", wordTrig = false, snippetType = "autosnippet" , dscr = "n-th root"},
         fmta(
             [[\sqrt[<>]{<>}]],
             { i(1), i(2) }
@@ -64,7 +104,7 @@ return {
     ),
 
     -- Matrix environments
-    s({ trig = "pma", wordTrig = false, snippetType = "autosnippet" , dscr = "Expands into standard matrix"},
+    s({ trig = "pma", wordTrig = false, snippetType = "autosnippet" , dscr = "Standard matrix"},
         fmta(
             [[
                 \begin{pmatrix}
@@ -76,7 +116,7 @@ return {
         {condition = in_math}
     ),
 
-    s({ trig = "vma", wordTrig = false, snippetType = "autosnippet" , dscr = "Expands into determinant"},
+    s({ trig = "vma", wordTrig = false, snippetType = "autosnippet" , dscr = "Determinant"},
         fmta(
             [[
                 \begin{vmatrix}
