@@ -3,8 +3,10 @@ vim.g.custom_autosave_default = true;
 vim.g.vimtex_compiler_latexmk = { 
     aux_dir = ".aux", 
     out_dir = "out",
-    -- Default options
-    options = {"-synctex=1", "-interaction=nonstopmode", "-file-line-error", "-verbose"}
+
+    options = {"-synctex=1", "-interaction=nonstopmode", "-file-line-error", "-verbose", -- Default options
+    "-shell-escape" -- Used for externalizing pgfplots calls to prevent memory issues
+}
 }
 
 -- Keybinds
@@ -20,3 +22,9 @@ vim.keymap.set({'n'}, "cs$", "<Plug>(vimtex-env-change-math)")
 
 -- Change to align* environment
 vim.keymap.set({'n'}, "csa", "<Plug>(vimtex-env-change-math)align*<CR>")
+
+-- Remap H, J, K, L
+vim.keymap.set({'n'}, "H", "<Cmd>call vimtex#motion#math(1,1,0)<CR>")
+vim.keymap.set({'n'}, "J", "<Cmd>call vimtex#motion#math(0,1,0)<CR>")
+vim.keymap.set({'n'}, "K", "<Cmd>call vimtex#motion#math(1,0,0)<CR>")
+vim.keymap.set({'n'}, "L", "<Cmd>call vimtex#motion#math(0,0,0)<CR>")

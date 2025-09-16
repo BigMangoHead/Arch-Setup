@@ -3,7 +3,7 @@
 
 local autosave_enabled = vim.g.autosave_default or false -- Default from global variable
 local autosave_timer = nil
-local autosave_interval = 1000; -- Milliseconds between autosaves
+local autosave_interval = 3000; -- Milliseconds between autosaves
 
 -- Function to start autosaving
 local function start_autosave(interval)
