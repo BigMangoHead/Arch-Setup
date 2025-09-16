@@ -56,6 +56,9 @@ return {
     greekcap(";H", "Phi"),
     greekcap(";I", "Psi"),
     greekcap(";O", "Omega"),
+
+    -- Partial symbol
+    symbol(":p", "partial", "Partial derivative"),
     
     -- Dots
     symbol("ld", "ldots", "Three dots"),
