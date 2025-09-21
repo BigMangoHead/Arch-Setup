@@ -24,7 +24,7 @@ vim.keymap.set({'n'}, "cs$", "<Plug>(vimtex-env-change-math)")
 vim.keymap.set({'n'}, "csa", "<Plug>(vimtex-env-change-math)align*<CR>")
 
 -- Remap H, J, K, L
-vim.keymap.set({'n'}, "H", "<Cmd>call vimtex#motion#math(1,1,0)<CR>")
-vim.keymap.set({'n'}, "J", "<Cmd>call vimtex#motion#math(0,1,0)<CR>")
-vim.keymap.set({'n'}, "K", "<Cmd>call vimtex#motion#math(1,0,0)<CR>")
-vim.keymap.set({'n'}, "L", "<Cmd>call vimtex#motion#math(0,0,0)<CR>")
+vim.keymap.set({'n', 's', 'v', 'o'}, "H", "<Cmd>call vimtex#motion#math(1,1,0)<CR>")
+vim.keymap.set({'n', 's', 'v', 'o'}, "J", "<Cmd>call vimtex#motion#math(0,1,0)<CR>")
+vim.keymap.set({'n', 's', 'v', 'o'}, "K", "<Cmd>call vimtex#motion#math(1,0,0)<CR>")
+vim.keymap.set({'n', 's', 'v', 'o'}, "L", "<Cmd>call vimtex#motion#math(0,0,0)<CR>")
