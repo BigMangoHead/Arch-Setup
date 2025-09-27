@@ -16,6 +16,10 @@ alias laa='ls -lah --color=auto'
 alias sls='screen -ls'
 alias grep='grep --color=auto'
 
+# Get java working
+export JAVA_HOME=/usr/lib/jvm/java-24-openjdk
+export PATH=$JAVA_HOME/bin:$PATH
+
 # Quick command for moving to math classes directory
 alias cm='cd ~/math/classes/undergrad'
 
