@@ -77,7 +77,7 @@ return {
 
 
     -- Fraction
-    s({ trig = "fj", wordTrig = false, snippetType = "autosnippet" , dscr = "Fraction"},
+    s({ trig = "fl", wordTrig = false, snippetType = "autosnippet" , dscr = "Fraction"},
         fmta(
             "\\frac{<>}{<>}",
             { i(1), i(2) }
@@ -254,6 +254,15 @@ return {
         fmta(
             [[\binom{<>}{<>}]],
             { i(1), i(2) }
+        ),
+        {condition = in_math}
+    ),
+
+    -- Modulus
+    s({trig = "PM", wordTrig = false, snippetType = "autosnippet", dscr = "Modulus"},
+        fmta(
+            [[\pmod {<>}]],
+            { i(1) }
         ),
         {condition = in_math}
     ),
