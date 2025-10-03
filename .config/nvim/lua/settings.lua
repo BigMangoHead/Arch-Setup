@@ -13,7 +13,6 @@ vim.opt.linebreak = true
 -- Line numbers and relative line numbers enabled
 -- This is disabled for some specific buffers, like the one used by VimTex
 vim.opt.nu = true
-vim.opt.rnu = true
 
 -- Four space idents
 -- NOTE: This is changed for some filetypes in the corresponding ftplugin files
