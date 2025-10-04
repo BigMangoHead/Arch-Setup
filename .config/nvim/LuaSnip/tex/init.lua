@@ -4,6 +4,7 @@ local line_begin = helper.line_begin
 local in_math = helper.in_math
 local in_text = helper.in_text
 local get_visual = helper.get_visual
+local line_begin_and_in_text = function (a, b, c) return line_begin(a, b, c) and in_text(a, b, c) end
 
 local function environment(trig, env, dscr)
     return s({ trig = trig, dscr = dscr },
@@ -16,7 +17,7 @@ local function environment(trig, env, dscr)
             ]],
             { i(1), i(0) }
         ),
-        {condition = line_begin}
+        {condition = line_begin_and_in_text}
     )
 end
 
@@ -54,7 +55,7 @@ return {
             ]],
             { i(1) }
         ),
-        {condition = line_begin}
+        {condition = line_begin_and_in_text}
     ),
 
     -- Spam of different environments I use
