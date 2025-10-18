@@ -39,3 +39,6 @@ alias cc='cd ~/coding/classes'
 alias putnam='cd ~/math/math-comp/meets/summer-2025/; mupdf PutnamAndBeyond-Andreescu.pdf &'
 
 PS1='[\u@\h \W]\$ '
+
+# Add zoxide
+eval "$(zoxide init bash)"
