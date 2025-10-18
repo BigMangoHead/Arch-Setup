@@ -78,6 +78,7 @@ return {
     symbol("EE", "mathbb E", "Euclidean plane"),
     symbol("AA", "mathbb A", "Alternative Euclidean plane"),
     symbol("DD", "mathbb D", "Open disk"),
+    symbol("HH", "mathbb H", "Bold font H"),
 
     -- More complex ones
     expression("Cc", [[\widehat{\mathbb C}]], "Extended complex plane"),
@@ -94,4 +95,7 @@ return {
 
     -- Curve in group action
     symbol("cur", "curvearrowright", "Group action symbol"),
+
+    -- Empty set
+    symbol("emp", "varnothing", "Empty set"),
 }
