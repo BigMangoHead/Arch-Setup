@@ -1,3 +1,4 @@
+zoxide # Better cd command
 screen # Nice for running background tasks
 
 xterm # Handles something with background terminals
