@@ -67,6 +67,10 @@ return {
     environment("al", "align*", "Expands into align environment"),
     environment("ali", "align*", "Expands into align environment"),
 
+    -- Gather
+    environment("ga", "gather*", "Expands into gather environment"),
+    environment("gat", "gather*", "Expands into gather environment"),
+
     -- Proof environment
     environment("pr", "proof", "Expands into proof environment"),
     environment("pf", "proof", "Expands into proof environment"),

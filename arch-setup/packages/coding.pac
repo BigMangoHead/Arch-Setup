@@ -9,6 +9,9 @@ python-pipx
 # Lua package installer
 luarocks
 
+# Assembly tools
+lldb
+
 # Webdev stuff
 npm
 
