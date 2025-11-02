@@ -67,6 +67,9 @@ return {
     symbol("rar", "rightarrow", "Right arrow"),
     symbol("Rar", "rightrightarrows", "Two right arrows"),
 
+    -- Equivalence symbol
+    symbol("equ", "equiv", "Equivalence"),
+
     -- Simple math blackboard symbols
     symbol("NN", "mathbb N", "Set of positive integers"),
     symbol("ZZ", "mathbb Z", "Set of integers"),
