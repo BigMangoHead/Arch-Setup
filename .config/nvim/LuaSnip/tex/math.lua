@@ -128,6 +128,19 @@ return {
         {condition = in_math}
     ),
 
+    -- Cases for function definition
+    s({ trig = "cas", wordTrig = false, snippetType = "autosnippet" , dscr = "Determinant"},
+        fmta(
+            [[
+                \begin{cases}
+                    <>
+                \end{cases}
+            ]],
+            { i(1) }
+        ),
+        {condition = in_math}
+    ),
+
     -- Inverse
     s({trig = "jn", wordTrig = false, snippetType = "autosnippet", dscr = "Inverse by exponent"},
         {t("^{-1}")},
@@ -208,6 +221,32 @@ return {
         ),
         {condition = in_math}
     ),
+
+    -- Hats for sets
+    s({trig = "wha", wordTrig = false, snippetType = "autosnippet", dscr = "Wide hat"},
+        fmta(
+            [[\widehat{<>}]],
+            { i(1) }
+        ),
+        {condition = in_math}
+    ),
+    s({trig = "lha", wordTrig = false, snippetType = "autosnippet", dscr = "Little hat"},
+        fmta(
+            [[\hat{<>}]],
+            { i(1) }
+        ),
+        {condition = in_math}
+    ),
+
+    -- Tilde
+    s({trig = "til", wordTrig = false, snippetType = "autosnippet", dscr = "Wide tilde"},
+        fmta(
+            [[\widetilde ]],
+            {  }
+        ),
+        {condition = in_math}
+    ),
+    
 
     -- Bold font
     s({trig = "bf", wordTrig = false, snippetType = "autosnippet", dscr = "Math bold font"},
