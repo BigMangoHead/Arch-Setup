@@ -83,6 +83,16 @@ return {
     symbol("DD", "mathbb D", "Open disk"),
     symbol("HH", "mathbb H", "Bold font H"),
 
+    -- Simple math script symbols
+    symbol("cA", "mathcal A", "Script typeface A"),
+    symbol("CA", "mathcal A", "Script typeface A"),
+    symbol("cB", "mathcal B", "Script typeface B"),
+    symbol("CB", "mathcal B", "Script typeface B"),
+    symbol("cF", "mathcal F", "Script typeface F"),
+    symbol("CF", "mathcal F", "Script typeface F"),
+    symbol("cG", "mathcal G", "Script typeface G"),
+    symbol("CG", "mathcal G", "Script typeface G"),
+
     -- More complex ones
     expression("Cc", [[\widehat{\mathbb C}]], "Extended complex plane"),
     expression("cC", [[\widehat{\mathbb C}]], "Extended complex plane"),

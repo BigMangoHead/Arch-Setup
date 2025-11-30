@@ -14,6 +14,9 @@ wget # For download from links
 zip # File compression
 unzip
 
+man
+man-pages
+
 maim # Screenshots
 zbar # QR code reader
 

@@ -48,7 +48,7 @@ return {
     ),
 
     -- Floor
-    s({ trig = "flo", wordTrig = false, snippetType = "autosnippet" , dscr = "Floor"},
+    s({ trig = "FL", wordTrig = false, snippetType = "autosnippet" , dscr = "Floor"},
         fmta(
             [[\lfloor <> \rfloor]],
             { d(1, get_visual) }
@@ -57,7 +57,7 @@ return {
     ),
 
     -- Ceiling
-    s({ trig = "cei", wordTrig = false, snippetType = "autosnippet" , dscr = "Ceiling"},
+    s({ trig = "CE", wordTrig = false, snippetType = "autosnippet" , dscr = "Ceiling"},
         fmta(
             [[\lceil <> \rceil]],
             { d(1, get_visual) }
