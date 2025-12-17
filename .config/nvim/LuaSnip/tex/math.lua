@@ -271,6 +271,15 @@ return {
         {condition = in_math}
     ),
 
+    -- Limit
+    s({trig = "lii", wordTrig = false, snippetType = "autosnippet", dscr = "Infinite limit"},
+        fmta(
+            [[\lim_{<> \to \infty}]],
+            { i(1) }
+        ),
+        {condition = in_math}
+    ),
+
     -- Derivatives
     s({trig = "dff", wordTrig = false, snippetType = "autosnippet", dscr = "Ordinary derivative"},
         fmta(
