@@ -1,2 +1,2 @@
 #!/bin/bash
-ssh -L 9898:localhost:8384 mango-server
+ssh -L 9898:localhost:8384 mc-server
