@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd ~/scripts/lua/time_tracker
-lua time_tracker.lua $@ &
+lua time_tracker.lua $@
