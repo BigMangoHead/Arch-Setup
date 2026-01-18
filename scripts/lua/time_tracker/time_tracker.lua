@@ -59,6 +59,8 @@ elseif cmd == "stop" then
     table.insert(row_data, os.date("%m/%d", time_old))
     row_manager.add_row(TIME_TRACKER_FILE, row_data)
 
+    log(string.format("%02d hours and %02d minutes logged.", hours, minutes))
+
     clearData()
 
 elseif cmd == "cancel" then
@@ -112,6 +114,6 @@ else
     if data.paused == true then
         time_passed = time_passed - time_now + data.last_paused
     end
-    log(string.format("Current elapsed time: %02d:%02d", math.floor(time_passed / 3600), math.floor(time_passed / 60)))
+    log(string.format("Current elapsed time: %02d:%02d", math.floor(time_passed / 3600), math.floor(time_passed / 60) % 60))
 
 end
