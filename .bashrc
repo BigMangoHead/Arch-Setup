@@ -7,6 +7,7 @@
 
 export PATH=$PATH:~/bin
 export MANPATH=:~/.man
+export EDITOR="nvim"
 
 # Vi mode
 set -o vi
@@ -19,6 +20,9 @@ alias grep='grep --color=auto'
 # Get java working
 export JAVA_HOME=/usr/lib/jvm/java-24-openjdk
 export PATH=$JAVA_HOME/bin:$PATH
+
+# Prevent ranger from loading the default config
+export RANGER_LOAD_DEFAULT_RC=false
 
 # Quick command for moving to math classes directory
 alias cm='cd ~/math/classes/undergrad'

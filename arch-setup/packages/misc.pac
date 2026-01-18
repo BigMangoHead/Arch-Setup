@@ -4,6 +4,8 @@ screen # Nice for running background tasks
 xterm # Handles something with background terminals
 alacritty # My terminal application
 
+ranger # File manager
+
 neofetch # Looks cool, displays system information
 htop # Also displays system information
 cmatrix # Looks cool
