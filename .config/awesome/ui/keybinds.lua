@@ -72,6 +72,8 @@ function binding_handler.bind_keys(window_manager, main_menu)
       -- Program hotkeys
       awful.key({ vars.modkey,           }, "Return", function () awful.spawn(vars.terminal) end,
 	 {description = "open a terminal", group = "launcher"}),
+      awful.key({ vars.modkey,           }, "'", function () awful.spawn(vars.terminal .. " -e ranger" ) end,
+	 {description = "open ranger in a terminal", group = "launcher"}),
       awful.key({ vars.modkey, "Control" }, "r", awesome.restart,
 	 {description = "reload awesome", group = "awesome"}),
       awful.key({ vars.modkey, "Shift"   }, "q", awesome.quit,
