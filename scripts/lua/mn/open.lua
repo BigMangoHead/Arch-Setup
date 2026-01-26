@@ -104,10 +104,10 @@ function mn_open.run(cmd_args, class_dir, config)
     end
     -- Current forms
     if config.exec_all then
-        os.execute("bash \"" .. class_dir .. "/" .. config.exec_all .. "\"")
+        os.execute("cd \"" .. project_dir .. "\"; bash \"" .. class_dir .. "/" .. config.exec_all .. "\"")
     end
     if hw_path and config.exec_hw and string.find(project_dir, '^' .. hw_path) then
-        os.execute("bash \"" .. class_dir .. "/" .. config.exec_hw .. "\"")
+        os.execute("cd \"" .. project_dir .. "\"; bash \"" .. class_dir .. "/" .. config.exec_hw .. "\"")
     end
 
 
