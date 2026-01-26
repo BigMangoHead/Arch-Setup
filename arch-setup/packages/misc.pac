@@ -49,3 +49,5 @@ syncthing # File syncing designed for computer to computer
 bitwarden # Password manager
 
 kamoso # Camera app
+
+touchegg # Touchscreen gestures
