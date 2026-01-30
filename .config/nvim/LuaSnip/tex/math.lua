@@ -170,7 +170,16 @@ return {
     s({trig = "je", wordTrig = false, snippetType = "autosnippet", dscr = "Exponentiation"},
         fmta(
             [[^{<>}]],
-            { i(1) }
+            { c(1, {i(nil), t("\\infty")}) }
+        ),
+        {condition = in_math}
+    ),
+
+    -- Star superscript
+    s({trig = "jst", wordTrig = false, snippetType = "autosnippet", dscr = "Star superscript"},
+        fmta(
+            [[^{\star}]],
+            { }
         ),
         {condition = in_math}
     ),
@@ -254,6 +263,38 @@ return {
         {condition = in_math}
     ),
 
+    -- Union
+    s({trig = "SCUP", wordTrig = false, snippetType = "autosnippet", dscr = "Big disjoint union"},
+        fmta(
+            [[\bigsqcup_{<>}^{<>}]],
+            { i(1), i(2, "\\infty") }
+        ),
+        {condition = in_math}
+    ),
+    s({trig = "CUP", wordTrig = false, snippetType = "autosnippet", dscr = "Big union"},
+        fmta(
+            [[\bigcup_{<>}^{<>}]],
+            { i(1), i(2, "\\infty") }
+        ),
+        {condition = in_math}
+    ),
+
+    -- Intersection (relies on CA -> \\mathcal A)
+    s({trig = "S\\mathcal AP", wordTrig = false, snippetType = "autosnippet", dscr = "Big disjoint intersection"},
+        fmta(
+            [[\bigsqcap_{<>}^{<>}]],
+            { i(1), i(2, "\\infty") }
+        ),
+        {condition = in_math}
+    ),
+    s({trig = "\\mathcal AP", wordTrig = false, snippetType = "autosnippet", dscr = "Big intersection"},
+        fmta(
+            [[\bigcap_{<>}^{<>}]],
+            { i(1), i(2, "\\infty") }
+        ),
+        {condition = in_math}
+    ),
+
     -- Summations
     s({trig = "sml", wordTrig = false, snippetType = "autosnippet", dscr = "Finite summation"},
         fmta(
@@ -314,5 +355,4 @@ return {
         ),
         {condition = in_math}
     ),
-
 }

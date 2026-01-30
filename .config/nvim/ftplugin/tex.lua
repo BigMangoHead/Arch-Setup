@@ -28,3 +28,8 @@ vim.keymap.set({'n', 's', 'v', 'o'}, "H", "<Cmd>call vimtex#motion#math(1,1,0)<C
 vim.keymap.set({'n', 's', 'v', 'o'}, "J", "<Cmd>call vimtex#motion#math(0,1,0)<CR>")
 vim.keymap.set({'n', 's', 'v', 'o'}, "K", "<Cmd>call vimtex#motion#math(1,0,0)<CR>")
 vim.keymap.set({'n', 's', 'v', 'o'}, "L", "<Cmd>call vimtex#motion#math(0,0,0)<CR>")
+
+-- Save variable
+for c in string.gmatch("abcdefghijklmnopqrstuvwxyz", ".") do
+    vim.keymap.set({'i'}, "<C-k>" .. c, "<Esc>F$vf$\"" .. c .. "yf$a")
+end

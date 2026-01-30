@@ -21,6 +21,12 @@ local function greekcap(a, b)
     return symbol(a, b, "Capital greek letter " .. b)
 end
 
+local function scriptface(a)
+    return s({trig = "[Cc]" .. a, trigEngine = "pattern", wordTrig = false, snippetType = "autosnippet", dscr = "Script typeface " .. a},
+                {t("\\mathcal " .. a)},
+            {condition = in_math})
+end
+
 -- Snippets
 return {
     -- Greek letters
@@ -84,14 +90,26 @@ return {
     symbol("HH", "mathbb H", "Bold font H"),
 
     -- Simple math script symbols
-    symbol("cA", "mathcal A", "Script typeface A"),
-    symbol("CA", "mathcal A", "Script typeface A"),
-    symbol("cB", "mathcal B", "Script typeface B"),
-    symbol("CB", "mathcal B", "Script typeface B"),
-    symbol("cF", "mathcal F", "Script typeface F"),
-    symbol("CF", "mathcal F", "Script typeface F"),
-    symbol("cG", "mathcal G", "Script typeface G"),
-    symbol("CG", "mathcal G", "Script typeface G"),
+    scriptface("A"),
+    scriptface("B"),
+    scriptface("D"),
+    scriptface("E"),
+    scriptface("F"),
+    scriptface("G"),
+    scriptface("H"),
+    scriptface("I"),
+    scriptface("J"),
+    scriptface("K"),
+    scriptface("L"),
+    scriptface("M"),
+    scriptface("N"),
+    scriptface("O"),
+    scriptface("P"),
+    scriptface("Q"),
+    scriptface("R"),
+    scriptface("S"),
+    scriptface("T"),
+    scriptface("W"),
 
     -- More complex ones
     expression("Cc", [[\widehat{\mathbb C}]], "Extended complex plane"),
@@ -111,4 +129,7 @@ return {
 
     -- Empty set
     symbol("emp", "varnothing", "Empty set"),
+
+    -- Infinity
+    symbol("INF", "infty", "Infinity"),
 }
