@@ -3,3 +3,5 @@ thorium-browser-bin # Chromium-based browser, claims to be a faster version of c
 snapd # For loading some specific applications. As of writing, used for todoist
 
 todoist-appimage # For managing tasks better
+
+touche # For configuring touchscreen gestures with touchegg
