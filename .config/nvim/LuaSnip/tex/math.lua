@@ -178,7 +178,7 @@ return {
     -- Star superscript
     s({trig = "jst", wordTrig = false, snippetType = "autosnippet", dscr = "Star superscript"},
         fmta(
-            [[^{\star}]],
+            [[^{*}]],
             { }
         ),
         {condition = in_math}
