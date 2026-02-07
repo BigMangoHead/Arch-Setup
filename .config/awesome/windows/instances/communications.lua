@@ -1,7 +1,7 @@
 local window = require("windows.window")
 local awful = require("awful")
 
-communications_window = window:new({}, "Communications", 2, awful.layout.suit.floating)
+communications_window = window:new({}, "Communications", 2, awful.layout.suit.tile)
 
 function communications_window:post_init()
    --awful.spawn.easy_async_with_shell("alacritty &", function()
