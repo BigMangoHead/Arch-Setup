@@ -39,7 +39,7 @@ return {
     ),
 
     -- Inline math environment
-    s({ trig = "dj", snippetType = "autosnippet" , dscr = "Expands into inline math mode"},
+    s({ trig = "d[Jj]", trigEngine = "pattern", snippetType = "autosnippet" , dscr = "Expands into inline math mode"},
         fmta(
             [[$<>$]],
             { i(1)}
@@ -125,4 +125,19 @@ return {
     -- Itemize environment
     environment("it", "itemize", "Expands into itemize environment"),
     environment("ite", "itemize", "Expands into itemize environment"),
+
+    -- Alphabetic enumerate environment
+    s({ trig = "ale", dscr = "Expands into alphabetic enumerate environment" },
+        fmta(
+            [[
+                \begin{enumerate}[(a)]
+                    <>
+                \end{enumerate}
+                <>
+            ]],
+            { i(1), i(0) }
+        ),
+        {condition = line_begin_and_in_text}
+    ),
+
 }
