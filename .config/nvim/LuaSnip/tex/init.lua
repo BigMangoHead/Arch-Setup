@@ -6,15 +6,20 @@ local in_text = helper.in_text
 local get_visual = helper.get_visual
 local line_begin_and_in_text = function (a, b, c) return line_begin(a, b, c) and in_text(a, b, c) end
 
-local function environment(trig, env, dscr)
+local function environment(trig, env, dscr, opt)
+    if not opt then
+        opt = ""
+    else
+        opt = '[' .. opt .. ']'
+    end
     return s({ trig = trig, dscr = dscr },
         fmta(
-            [[
-                \begin{]] .. env .. [[}
+            string.format([[
+                \begin{%s}%s
                     <>
-                \end{]] .. env .. [[}
+                \end{%s}
                 <>
-            ]],
+            ]], env, opt, env),
             { i(1), i(0) }
         ),
         {condition = line_begin_and_in_text}
@@ -56,6 +61,17 @@ return {
             { i(1) }
         ),
         {condition = line_begin_and_in_text}
+    ),
+
+    -- Noindent 
+    s({ trig = "noi", dscr = "No indent marker"},
+        t("\\noindent"),
+        {condition = in_text}
+    ),
+    -- Pagebreak
+    s({ trig = "pgb", dscr = "Page break marker"},
+        t("\\pagebreak"),
+        {condition = in_text}
     ),
 
     -- Spam of different environments I use
@@ -116,7 +132,18 @@ return {
     environment("ex*", "exercise*", "Expands into exercise* environment"),
 
     -- Problem environment
-    environment("pb", "problem", "Expands into problem environment"),
+    s({ trig = "pb", dscr = "Expands into problem environment" },
+        fmta(
+            [[
+                \begin{problem}[<>]
+                    <>
+                \end{problem}
+                <>
+            ]],
+            { i(1), i(2), i(0) }
+        ),
+        {condition = line_begin_and_in_text}
+    ),
     
     -- Enumerate environment
     environment("en", "enumerate", "Expands into enumerate environment"),
@@ -127,17 +154,5 @@ return {
     environment("ite", "itemize", "Expands into itemize environment"),
 
     -- Alphabetic enumerate environment
-    s({ trig = "ale", dscr = "Expands into alphabetic enumerate environment" },
-        fmta(
-            [[
-                \begin{enumerate}[(a)]
-                    <>
-                \end{enumerate}
-                <>
-            ]],
-            { i(1), i(0) }
-        ),
-        {condition = line_begin_and_in_text}
-    ),
-
+    environment("ale", "enumerate", "Expands into alphabetic enumerate environment", "(a)"),
 }
