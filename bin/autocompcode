@@ -1,25 +1,27 @@
 #!/bin/bash
 
+printoutput() {
+    echo "===== OUT ====="
+    cat .runtime/out
+    # echo "===== EXPECTED =====" 
+    # cat "${1%.*}.want"
+    echo "===== LOG ====="
+    cat .runtime/log
+}
+
 run () {
     mkdir -p .runtime
 
     # Flags are largely from peltorator on YouTube, check www.youtube.com/watch?v=a2DD36WHpAY
     g++ "$1" -std=c++17 -fsanitize=address -Wall -Wextra -Wshadow -DLOCAL -O2 -o .runtime/exec 2> .runtime/complog
 
-    if [[ "$?" = 0 ]] then
-        .runtime/exec < "${1%.*}.in" > .runtime/out 2> .runtime/log &
-        # Save process ID and kill process if it's still running after some time
-        sid=($!)
-        trap "kill $sid" SIGTERM # Kill C++ code if terminated
-        sleep $2
-        kill $sid
+    if [[ "$?" -eq 0 ]]; then
+        timeout "$2"s .runtime/exec < "${1%.*}.in" > .runtime/out 2> .runtime/log
+        if [[ "$?" -eq 124 ]]; then
+            echo "PROCESS KILLED"
+        fi
+        printoutput 
 
-        echo "===== OUT ====="
-        cat .runtime/out
-        # echo "===== EXPECTED =====" 
-        # cat "${1%.*}.want"
-        echo "===== LOG ====="
-        cat .runtime/log
     else
         echo "===== ERROR ====="
         cat .runtime/complog
