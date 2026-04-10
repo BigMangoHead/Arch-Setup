@@ -73,6 +73,26 @@ return {
         {condition = line_begin}
     ),
 
+    -- Read in adjacency list
+    s({ trig = "ADJ", descr = "Read adjacency list", priority = 2000},
+        fmta(
+            [[
+                vector<<vector<<int>>>> <>(<>);
+                for (int i=0; i << <>; i++) {
+                    int x, y;
+                    cin >>>> x >>>> y;
+                    x--; y--;
+                    <>[x].push_back(y);
+                    <>[y].push_back(x);
+                }
+
+            ]],
+            { i(1), i(2), i(3), rep(1), rep(1) }
+        ),
+        {condition = line_begin}
+    ),
+
+
     -- Integer pair
     s({ trig = "pi", dscr = "Pair of integers"},
         t("pair<int, int>")

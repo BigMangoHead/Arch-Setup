@@ -88,6 +88,7 @@ return {
     symbol("AA", "mathbb A", "Alternative Euclidean plane"),
     symbol("DD", "mathbb D", "Open disk"),
     symbol("HH", "mathbb H", "Bold font H"),
+    symbol("KK", "mathbb K", "Bold font K"),
 
     -- Simple math script symbols
     scriptface("A"),

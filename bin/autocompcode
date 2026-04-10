@@ -16,8 +16,8 @@ run () {
 
         echo "===== OUT ====="
         cat .runtime/out
-        echo "===== EXPECTED ====="
-        cat "${1%.*}.want"
+        # echo "===== EXPECTED =====" 
+        # cat "${1%.*}.want"
         echo "===== LOG ====="
         cat .runtime/log
     else

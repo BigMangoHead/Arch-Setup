@@ -1,4 +1,4 @@
 #!/bin/bash
 
-datevar="$(date --date="$*" "+<t:%s:t>")"
+datevar="$(date --date="$*" "+<t:%s:F>")"
 echo -n "$datevar" | xclip -selection clipboard
