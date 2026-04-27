@@ -7,3 +7,5 @@
 	excludesfile = /home/bigma/.gitignore
 [alias]
     uncommit = reset HEAD^
+[credential]
+	helper = store
