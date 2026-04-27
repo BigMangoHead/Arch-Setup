@@ -9,5 +9,3 @@
 	helper = store
 [alias]
     uncommit = reset HEAD^
-[credential]
-	helper = store
