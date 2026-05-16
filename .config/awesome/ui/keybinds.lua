@@ -78,7 +78,7 @@ function binding_handler.bind_keys(window_manager, main_menu)
 	 {description = "reload awesome", group = "awesome"}),
       awful.key({ vars.modkey, "Shift"   }, "q", awesome.quit,
 	 {description = "quit awesome", group = "awesome"}),
-      awful.key({ vars.modkey, "Shift"   }, "l", function () awful.spawn(vars.sleep_cmd) end,
+      awful.key({ vars.modkey, "Shift"   }, "p", function () awful.spawn(vars.sleep_cmd) end,
 	 {description = "sleep", group = "awesome"}),
       awful.key({ vars.modkey,           }, "/", function () awful.spawn(vars.browser) end,
 	 {description = "open a browser", group = "launcher"}), 
