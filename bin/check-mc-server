@@ -1,0 +1,3 @@
+#!/bin/bash
+# First argument is IP, second is port
+echo -n $'\xFE\x01' | nc "$1" "$2"

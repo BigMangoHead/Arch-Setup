@@ -47,6 +47,14 @@ return {
         {condition = in_math}
     ),
 
+    s({ trig = "NOR", wordTrig = false, snippetType = "autosnippet" , dscr = "Norm"},
+        fmta(
+            [[\|<>\|]],
+            { d(1, get_visual) }
+        ),
+        {condition = in_math}
+    ),
+
     -- Floor
     s({ trig = "FL", wordTrig = false, snippetType = "autosnippet" , dscr = "Floor"},
         fmta(
