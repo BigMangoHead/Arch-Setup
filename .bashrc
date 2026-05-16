@@ -39,6 +39,7 @@ alias cc='cd ~/coding/classes'
 # Quick Putnam studying reference
 alias putnam='cd ~/math/math-comp/meets/winter-2025/; mupdf PutnamAndBeyond-Andreescu.pdf &'
 
+# Set displayed text at left of terminal line
 PS1='[\u@\h \W]\$ '
 
 # Add zoxide
