@@ -1,0 +1,2 @@
+#!/bin/bash
+ssh mc-server "bash /home/main/scripts/manager/mserver.sh $@"

@@ -1,0 +1,34 @@
+#!/bin/bash
+# Courtesy of claude
+
+TARGET=mc-server
+
+set -euo pipefail
+
+if [[ -z "${TARGET:-}" ]]; then
+  echo "Error: \$TARGET is not set. Export it before running:" >&2
+  echo "  export TARGET=user@host" >&2
+  exit 1
+fi
+
+if [[ $# -eq 0 ]]; then
+  echo "Usage: deploy <file1> [file2 ...]" >&2
+  exit 1
+fi
+
+for file in "$@"; do
+  if [[ ! -f "$file" ]]; then
+    echo "Warning: '$file' not found, skipping." >&2
+    continue
+  fi
+
+  filename=$(basename "$file")
+
+  echo "→ Uploading '$filename' to $TARGET:/tmp/ ..."
+  scp "$file" "${TARGET}:/tmp/${filename}"
+
+  echo "→ Moving '$filename' to /srv/http/ ..."
+  ssh "$TARGET" "sudo mv /tmp/${filename} /srv/http/${filename}"
+
+  echo "✓ Done: /srv/http/$filename"
+done
