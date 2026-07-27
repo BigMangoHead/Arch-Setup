@@ -14,7 +14,8 @@ Plug('lervag/vimtex', { ['for'] = 'tex' })
 
 -- Fuzzy finder
 Plug('nvim-lua/plenary.nvim')
-Plug('nvim-telescope/telescope.nvim', { ['branch'] = '0.1.x' })
+Plug('nvim-telescope/telescope-fzf-native.nvim', { ['do'] = 'make' }) -- makes run faster
+Plug('nvim-telescope/telescope.nvim')
 
 -- Theme
 Plug('rebelot/kanagawa.nvim')

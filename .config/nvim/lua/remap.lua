@@ -51,7 +51,7 @@ local closels = function ()
 end
     
 vim.keymap.set('n', '<Leader>cls', openls)
-vim.keymap.set('n', '<Leader>bb', closels)
+vim.keymap.set('n', '<Leader>bls', closels)
 
 -- Switch theme
 vim.keymap.set('n', '<Leader>tl', '<Cmd>let g:CURTHEME="kanagawa-lotus"<CR><Cmd>colorscheme kanagawa-lotus<CR>')

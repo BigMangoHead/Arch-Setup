@@ -13,7 +13,7 @@ run () {
     mkdir -p .runtime
 
     # Flags are largely from peltorator on YouTube, check www.youtube.com/watch?v=a2DD36WHpAY
-    g++ "$1" -std=c++17 -fsanitize=address -Wall -Wextra -Wshadow -DLOCAL -O2 -o .runtime/exec 2> .runtime/complog
+    g++ "$1" -std=c++23 -fsanitize=address -Wall -Wextra -Wshadow -DLOCAL -O2 -o .runtime/exec 2> .runtime/complog
 
     if [[ "$?" -eq 0 ]]; then
         timeout "$2"s .runtime/exec < "${1%.*}.in" > .runtime/out 2> .runtime/log
