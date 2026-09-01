@@ -31,11 +31,12 @@ function get_dir.run(cmd_args)
         local lines = {}
         -- Remove comments from the JSON file
         for line in configFile:lines() do
+            local edited = line
             local i = string.find(line, "//")
             if i then
-                line = line:sub(1, i-1)
+                edited = line:sub(1, i-1)
             end
-            table.insert(lines, line)
+            table.insert(lines, edited)
         end
         configJson = table.concat(lines, "\n")
         configFile:close()

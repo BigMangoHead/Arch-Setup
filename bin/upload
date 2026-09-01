@@ -1,5 +1,6 @@
 #!/bin/bash
 # Courtesy of claude
+# just had to bug fix this, so maybe no more claude for this
 
 TARGET=mc-server
 
@@ -28,7 +29,7 @@ for file in "$@"; do
   scp "$file" "${TARGET}:/tmp/${filename}"
 
   echo "→ Moving '$filename' to /srv/http/ ..."
-  ssh "$TARGET" "sudo mv /tmp/${filename} /srv/http/${filename}"
+  ssh "$TARGET" "sudo mv \"/tmp/${filename}\" \"/srv/http/${filename}\""
 
   echo "✓ Done: /srv/http/$filename"
 done
