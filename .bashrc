@@ -9,6 +9,12 @@ export PATH=$PATH:~/bin
 export MANPATH=:~/.man
 export EDITOR="nvim"
 
+# Used for compilers course
+export LLVM_DIR=$(llvm-config --prefix)/lib/cmake/llvm
+export TOPCLANG=$(llvm-config --bindir)/clang
+export CC=$(llvm-config --bindir)/clang
+export CXX=$(llvm-config --bindir)/clang++
+
 # Vi mode
 set -o vi
 

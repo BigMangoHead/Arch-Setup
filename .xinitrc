@@ -11,4 +11,11 @@ xset r rate 200 30 # Decreases key delay for holding down keys (now 200 ms and 3
 touchegg & # Touchscreen gestures
 
 picom & # Window compositor
+
+# I don't really understand what these do, but they fixed an issue
+# I was having with my file picker for a while. Has something to do
+# with xdg-desktop-portal-gtk missing necessary variables to work
+systemctl --user import-environment DISPLAY XAUTHORITY
+dbus-update-activation-environment --systemd DISPLAY XAUTHORITY
+
 exec awesome --config "/home/bigma/.config/awesome/rc.lua"
