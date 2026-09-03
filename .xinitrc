@@ -10,6 +10,8 @@ touchegg & # Touchscreen gestures
 
 picom & # Window compositor
 
+screentearoff & # Run script to fix screen tearing with NVIDIA
+
 # I don't really understand what these do, but they fixed an issue
 # I was having with my file picker for a while. Has something to do
 # with xdg-desktop-portal-gtk missing necessary variables to work
