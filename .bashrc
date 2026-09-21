@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export PATH=$PATH:~/bin
+export PATH=$PATH:~/bin:~/.local/bin
 export MANPATH=:~/.man
 export EDITOR="nvim"
 
@@ -24,7 +24,7 @@ alias sls='screen -ls'
 alias grep='grep --color=auto'
 
 # Get java working
-export JAVA_HOME=/usr/lib/jvm/java-24-openjdk
+export JAVA_HOME=/usr/lib/jvm/java-26-openjdk
 export PATH=$JAVA_HOME/bin:$PATH
 
 # Prevent ranger from loading the default config
