@@ -62,6 +62,8 @@ return {
     greekcap(";H", "Phi"),
     greekcap(";I", "Psi"),
     greekcap(";O", "Omega"),
+    greekcap(";S", "Sigma"),
+
 
     -- Partial symbol
     symbol(":p", "partial", "Partial derivative"),
@@ -118,6 +120,7 @@ return {
 
     -- Set operators
     symbol("sue", "subseteq", "Subset or equal"),
+    symbol("sun", "subsetneq", "Proper subset"),
     symbol("sus", "subset", "Proper subset"),
     symbol("sem", "setminus", "Set difference"),
 
