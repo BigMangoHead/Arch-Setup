@@ -28,3 +28,5 @@ fd
 # Used for compilers class
 antlr4
 lcov
+
+github-cli # Github

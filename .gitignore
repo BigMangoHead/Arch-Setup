@@ -2,3 +2,5 @@
 *~
 # Ignore .vscode
 .vscode
+
+**/.claude/settings.local.json
